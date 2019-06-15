@@ -2,31 +2,34 @@
 
 ## Project Schedule
 
-
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1|  | Incomplete
-|Day 2|  | Incomplete
-|Day 3| | Incomplete
-|Day 4|  | Incomplete
-|Day 5|  | Incomplete
-|Day 6| MVP | Incomplete
-|Day 7| Present | Incomplete
-
+|6/17| Project Description | Incomplete
+|6/17| Wireframes / Priority Matrix / Functional Components | Incomplete
+|6/18| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|6/18| Pseudocode / actual code | Incomplete
+|6/18| Initial Clickable Model | Incomplete
+|6/19| MVP | Incomplete
+|6/21| Present | Incomplete
 
 ## Project Description
-Tried it is an application that allows the user to see reviews for places based on their friends. Often times indivudals trust
-their friends opinons more then anyone elses and Tried it lets the user see reviews to places where their friends have went.
-This application will allow a user to add an account to the database and add reviews to different places . Additionally a user can search up friends that are in the database to see what places they visted and what their opinons where. Also a user can search different places and see what friends visted the place and what their opinons where .
+
+**Tried It** is an application that allows the user to see reviews for places based on where their friends have visited. Often times individuals trust their friends' opinions more than anyone else's. This application will allow the user to add an account to the database as well as add reviews to different places. Additionally, the user may search for other friends in the database to see what places they tried and their review of it. Also, the user may search for a specific place and see which friends have "tried it" and see their reviews.
+
+- [Tried It](Link to app here)
 
 ## Wireframes
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
+| Wireframe | Description |
+| --- | --- |
+|  |  |
+
 ## Priority Matrix
 
-
+Include a full list of features that have been prioritized based on the `Time and Importance` Matix.
+- [Tried It Matrix](Link to matrix image goes here)
 
 ### MVP/PostMVP - 5min
 
@@ -35,7 +38,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### SAMPLE.....
 #### MVP 
 
-- Find and use external api 
+- Find and use external api
 - Render data on page in a list
 
 #### PostMVP 
@@ -46,7 +49,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Define the the React components and the architectural design of your app.
 
-#### [SAMPLE FROM A MAP BASED PROJECT](https://res.cloudinary.com/dvjtpejbw/image/upload/v1540221204/20181022_111216.jpg)
+#### [Tried It Architectural Design](Link to image here)
 
 ## ERD
 
@@ -88,7 +91,6 @@ Helper functions should be generic enought that they can be reused in other appl
 | --- | :---: |  
 | Bootstrap | Used to help style my application | 
 | Giphy API | Used to get gifs to use | 
-
 
 ## Code Snippet
 
