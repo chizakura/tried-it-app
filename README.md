@@ -18,9 +18,7 @@
 ## Project Description
 Tried it is an application that allows the user to see reviews for places based on their friends. Often times indivudals trust
 their friends opinons more then anyone elses and Tried it lets the user see reviews to places where their friends have went.
-This application will allow a user to add an account to the database and add reviews to different places . Additionally a user can search up  
-friends that are in the database to see what places they visted and what their opinons where. Also a user can search different places and 
-see what friends visted the place and what their opinons where .
+This application will allow a user to add an account to the database and add reviews to different places . Additionally a user can search up friends that are in the database to see what places they visted and what their opinons where. Also a user can search different places and see what friends visted the place and what their opinons where .
 
 ## Wireframes
 
