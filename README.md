@@ -27,7 +27,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.
-- [Tried It Matrix](Link to matrix image goes here)
+- [Tried It Matrix](https://res-console.cloudinary.com/shakhan2019/thumbnails/v1/image/upload/v1560728845/RjA1MUU2MDgtNDY2MS00RTlCLTg2MkYtMDI5QjlGMEQ3RTdCX3c5dndoYg==/grid)
 
 ### MVP/PostMVP - 5min
 
@@ -73,12 +73,15 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
-#### SAMPLE.....
-| Component | Priority | Estimated Time | Actual Time |
-| --- | :---: |  :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs |
-| Total | H | 6hrs| 5hrs | 
+| Landing Page showing News feed | H | 5hrs|  |
+| Setting up a user to register an account | H | 3hrs|  |
+| Adding Reviews | H | 2hrs|  |
+| Adding Places | H | 2hrs|  |
+| Being able to search the database | H | 2hrs|  |
+| Adding a friend| H | 4hrs|  |
+| Authorization | H | 6hrs|  |
+| Styling | H | 4hrs|  |
+| Total | H | 28 hrs| hrs |
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
