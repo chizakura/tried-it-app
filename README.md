@@ -59,11 +59,16 @@ Create the ERD model for your project
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-#### SAMPLE.....
-| Component | Description | 
-| --- | :---: |  
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| Component | Description |
+| --- | --- |
+| Landing Page | This will be the main page which includes the search bar and news feed |
+| SearchBar | This will render the search bar that shows a list of places and users |
+| NewsFeed | This will render a list of reviews with data taken from an API |
+| UsersIndex | This will render a list of users based on the place that was selected in the search  |
+| PlacesIndex | This will render a list of places based on the user that was selected in the search |
+| UserReview | This will render a specific user's review of a place they have been |
+| CreateUser | This will render a form to create a new user |
+| CreateReview | This will render a form to create a new review |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
@@ -76,7 +81,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Total | H | 6hrs| 5hrs | 
 
 ## Helper Functions
-Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
+Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
 #### SAMPLE.....
 | Function | Description | 
@@ -94,7 +99,7 @@ Helper functions should be generic enought that they can be reused in other appl
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description.
 
 #### SAMPLE.....
 ```
@@ -104,11 +109,11 @@ function reverse(string) {
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ Use this section to document what changes were made and the reasoning behind those changes.
 
 #### SAMPLE.....
 | Original Plan | Outcome | 
-| --- | :---: |  
+| --- | --- |  
 | Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
 
 ## Issues and Resolutions
