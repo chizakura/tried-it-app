@@ -49,11 +49,13 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Define the the React components and the architectural design of your app.
 
-#### [Tried It Architectural Design](Link to image here)
+#### [Tried It Architectural Design](https://res.cloudinary.com/chizakura/image/upload/v1560719179/Project%203/Tried_It_React_Architectural_Design.jpg)
 
 ## ERD
 
 Create the ERD model for your project
+
+#### [Tried It ERD](https://res.cloudinary.com/chizakura/image/upload/v1560719244/Project%203/Tried_It_ERD.png)
 
 ## Functional Components
 
@@ -61,7 +63,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Component | Description |
 | --- | --- |
-| Landing Page | This will be the main page which includes the search bar and news feed |
+| LandingPage | This will be the main page which includes the search bar and news feed |
 | SearchBar | This will render the search bar that shows a list of places and users |
 | NewsFeed | This will render a list of reviews with data taken from an API |
 | UsersIndex | This will render a list of users based on the place that was selected in the search  |
