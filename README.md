@@ -4,7 +4,7 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|6/17| Project Description | Incomplete
+|6/17| Project Description | Complete
 |6/17| Wireframes / Priority Matrix / Functional Components | Incomplete
 |6/18| Core Application Structure (HTML, CSS, etc.) | Incomplete
 |6/18| Pseudocode / actual code | Incomplete
@@ -22,9 +22,7 @@
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-| Wireframe | Description |
-| --- | --- |
-|  |  |
+[Tried It Wireframe](Link to image here)
 
 ## Priority Matrix
 
@@ -66,9 +64,9 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | LandingPage | This will be the main page which includes the search bar and news feed |
 | SearchBar | This will render the search bar that shows a list of places and users |
 | NewsFeed | This will render a list of reviews with data taken from an API |
-| UsersIndex | This will render a list of users based on the place that was selected in the search  |
-| PlacesIndex | This will render a list of places based on the user that was selected in the search |
-| UserReview | This will render a specific user's review of a place they have been |
+| ListOfUsers | This will render a list of users based on the place that was selected in the search |
+| UserProfile | This will render a list of places based on the user that was selected in the search |
+| ShowReview | This will render a specific user's review of a place they have been |
 | CreateUser | This will render a form to create a new user |
 | CreateReview | This will render a form to create a new review |
 
