@@ -12,7 +12,7 @@ class LandingPage extends Component {
         return (
             <div>
                 <nav>
-                    <Link to="/user/create">Add User</Link>
+                    <Link to="/create/user">Add User</Link>
                 </nav>
                 <h1>Tried It</h1>
                 <SearchBar/>
