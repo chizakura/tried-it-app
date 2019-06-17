@@ -5,7 +5,7 @@
 |  Day | Deliverable | Status
 |---|---| ---|
 |6/17| Project Description | Complete
-|6/17| Wireframes / Priority Matrix / Functional Components | Incomplete
+|6/17| Wireframes / Priority Matrix / Functional Components | Complete
 |6/18| Core Application Structure (HTML, CSS, etc.) | Incomplete
 |6/18| Pseudocode / actual code | Incomplete
 |6/18| Initial Clickable Model | Incomplete
@@ -86,10 +86,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Adding Reviews | H | 2hrs|  |
 | Adding Places | H | 2hrs|  |
 | Being able to search the database | H | 2hrs|  |
-| Adding a friend| H | 4hrs|  |
-| Authorization | H | 6hrs|  |
-| Styling | H | 4hrs|  |
-| Total | H | 28 hrs| hrs |
+| Styling | M | 4hrs|  |
+| Adding a friend| L | 4hrs|  |
+| Authorization | L | 6hrs|  |
+| Total |  | 28 hrs| hrs |
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
