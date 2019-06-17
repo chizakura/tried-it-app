@@ -22,7 +22,7 @@
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-[Tried It Wireframe](https://res.cloudinary.com/shakhan2019/image/upload/v1560729792/IMG_5981_hcg1zb.jpg)
+[Tried It Wireframe](https://res.cloudinary.com/shakhan2019/image/upload/v1560730269/screen_shot_2019-06-16_at_5.20.55_pm_ecdchq.png)
 
 ## Priority Matrix
 
