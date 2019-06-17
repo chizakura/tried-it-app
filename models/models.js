@@ -5,7 +5,7 @@ const db = new Sequelize({
     dialect: "postgres"
 })
 
-const Users = db.define('users', {
+const User = db.define('user', {
     name: {
         type: Sequelize.STRING,
         allowNull: false
@@ -16,7 +16,7 @@ const Users = db.define('users', {
     },
 })
 
-const Reviews = db.define('reviews', {
+const Review = db.define('review', {
     title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -29,18 +29,7 @@ const Reviews = db.define('reviews', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    userId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-    },
-    placeId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-    },
-    reviewId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-    },
+    
     entry: {
         type: Sequelize.TEXT
     },
@@ -49,7 +38,7 @@ const Reviews = db.define('reviews', {
 
 })
 
-const Places = db.define('places', {
+const Place = db.define('place', {
     name: {
         type: Sequelize.STRING,
         allowNull: false
@@ -68,13 +57,13 @@ const Places = db.define('places', {
 
 })
 
-Users.hasMany(Reviews)
-Reviews.belongTo(Users)
-Places.hasMany(Reviews)
-Reviews.belongTo(Places)
+User.hasMany(Review)
+Review.belongTo(User)
+Place.hasMany(Review)
+Review.belongTo(Place)
 module.exports = {
     db,
-    Users,
-    Reviews,
-    Places
+    User,
+    Review,
+    Place
 }
