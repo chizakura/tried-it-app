@@ -22,7 +22,7 @@
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-[Tried It Wireframe](https://res.cloudinary.com/shakhan2019/image/upload/v1560730269/screen_shot_2019-06-16_at_5.20.55_pm_ecdchq.png)
+[Tried It Wireframe](https://res.cloudinary.com/shakhan2019/image/upload/v1560730566/screen_shot_2019-06-16_at_5.20.55_pm_ecdchq.png)
 
 ## Priority Matrix
 
@@ -36,18 +36,18 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP 
 
--Functioning application that allows the user to:
--Register an account (add an account to database) 
--Add reviews to places that they tried before
--Allows user to search database for either a place to check it’s reviews from users in database Or a specific user see their reviews for places —Or their TriedIts— 
--newsFeed component on the landing page that shows recent TriedIts added to database
+* Functioning application that allows the user to:
+* Register an account (add an account to database) 
+* Add reviews to places that they tried before
+* Allows user to search database for either a place to check it’s reviews from users in database Or a specific user see their reviews for places —Or their TriedIts— 
+* NewsFeed component on the landing page that shows recent TriedIts added to database
 
 #### PostMVP 
 
--Add User Login and dynamically relate created reviews to logged in user
--Add authorizations to update and delete reviews for only the author user
--Add ‘add friend’ functionality between users so that logged in user can only see TriedIts from their friends
--Add Likes and Comments functionality to Users and to Reviews!
+* Add User Login and dynamically relate created reviews to logged in user
+* Add authorizations to update and delete reviews for only the author user
+* Add ‘add friend’ functionality between users so that logged in user can only see TriedIts from their friends
+* Add Likes and Comments functionality to Users and to Reviews!
 
 ## React Architectural Design
 
@@ -79,6 +79,8 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
+| Component | Priority | Estimated Time | Actual Time |
+| --- | :---: |  :---: | :---: |
 | Landing Page showing News feed | H | 5hrs|  |
 | Setting up a user to register an account | H | 3hrs|  |
 | Adding Reviews | H | 2hrs|  |
