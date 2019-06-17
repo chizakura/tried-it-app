@@ -2,18 +2,15 @@ const Sequelize = require("sequelize")
 
 const db = new Sequelize({
     database: "tried_it_db",
-    dialect: "postgres"
+    dialect: "postgres",
+    define: {underscored: true}
 })
 
 const User = db.define('user', {
     name: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    userId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-    },
+    }
 })
 
 const Review = db.define('review', {
@@ -32,9 +29,7 @@ const Review = db.define('review', {
     
     entry: {
         type: Sequelize.TEXT
-    },
-
-
+    }
 
 })
 
@@ -46,13 +41,9 @@ const Place = db.define('place', {
     category: {
         type: Sequelize.STRING
     },
-    placeId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-    },
     address: {
         type: Sequelize.TEXT
-    },
+    }
 
 
 })
@@ -60,7 +51,8 @@ const Place = db.define('place', {
 User.hasMany(Review)
 Review.belongTo(User)
 Place.hasMany(Review)
-Review.belongTo(Place)
+Review.belongsTo(Place)
+
 module.exports = {
     db,
     User,
