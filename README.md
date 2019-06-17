@@ -27,7 +27,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.
-- [Tried It Matrix](https://res-console.cloudinary.com/shakhan2019/thumbnails/v1/image/upload/v1560728845/RjA1MUU2MDgtNDY2MS00RTlCLTg2MkYtMDI5QjlGMEQ3RTdCX3c5dndoYg==/grid)
+- [Tried It Matrix](https://res.cloudinary.com/shakhan2019/image/upload/v1560729786/F051E608-4661-4E9B-862F-029B9F0D7E7B_1_t8qnxp.jpg)
 
 ### MVP/PostMVP - 5min
 
