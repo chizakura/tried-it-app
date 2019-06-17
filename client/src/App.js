@@ -6,7 +6,7 @@ import CreateUser from './Components/CreateUser';
 import CreateReview from './Components/CreateReview';
 import UserProfile from './Components/UserProfile';
 import ShowReview from './Components/ShowReview';
-import EditShowReview from './Components/EditShowReview';
+import EditReview from './Components/EditReview';
 import ListOfUsers from './Components/ListOfUsers';
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/create/review" component={CreateReview}/>
           <Route exact path="/user/:id" component={UserProfile}/>
           <Route exact path="/review/:id" component={ShowReview}/>
-          <Route exact path="/review/:id/edit" component={EditShowReview}/>
+          <Route exact path="/review/:id/edit" component={EditReview}/>
           <Route exact path="/places/:id" component={ListOfUsers}/>
         </Switch>
       </div>
