@@ -1,0 +1,1 @@
+// This page should show list of users that link to their review of that place
