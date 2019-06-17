@@ -36,17 +36,17 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP 
 
-* Functioning application that allows the user to:
-* Register an account (add an account to database) 
-* Add reviews to places that they tried before
-* Allows user to search database for either a place to check it’s reviews from users in database Or a specific user see their reviews for places —Or their TriedIts— 
-* NewsFeed component on the landing page that shows recent TriedIts added to database
+Functioning application that allows the user to:
+* Register an account (add an account to database). 
+* Add reviews to places that they tried before.
+* Allows user to search database for either a place to check it’s reviews from users in database Or a specific user see their reviews for places —Or their TriedIts—
+* NewsFeed component on the landing page that shows recent TriedIts added to database.
 
 #### PostMVP 
 
-* Add User Login and dynamically relate created reviews to logged in user
-* Add authorizations to update and delete reviews for only the author user
-* Add ‘add friend’ functionality between users so that logged in user can only see TriedIts from their friends
+* Add User Login and dynamically relate created reviews to logged in user.
+* Add authorizations to update and delete reviews for only the author user.
+* Add ‘add friend’ functionality between users so that logged in user can only see TriedIts from their friends.
 * Add Likes and Comments functionality to Users and to Reviews!
 
 ## React Architectural Design
