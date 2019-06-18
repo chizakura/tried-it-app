@@ -10,7 +10,15 @@ const User = db.define('user', {
     name: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    email: {
+        type: Sequelize.TEXT,
+        allowNull: false
     }
+    // password: {
+    //     type: Sequelize.TEXT,
+    //     allowNull: false
+    // }
 })
 
 const Review = db.define('review', {
@@ -28,8 +36,15 @@ const Review = db.define('review', {
     },
        
     entry: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: false
     }
+    // likes: {
+    //     type: Sequelize.INTEGER
+    // }
+    // comments: {
+    //     type: Sequelize.TEXT
+    // }
 })
 
 const Place = db.define('place', {
@@ -38,11 +53,26 @@ const Place = db.define('place', {
         allowNull: false
     },
     category: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
     },
     address: {
         type: Sequelize.TEXT
+    },
+    description: {
+        type:Sequelize.TEXT,
+        allowNull:false
+    },
+    phone: {
+        type: Sequelize.STRING,
+        allowNull: false 
     }
+    // favorite: {
+    //     type: Sequelize.INTEGER
+    // }
+    // image: {
+    //     type: Sequelize.TEXT
+    // }
 })
 
 User.hasMany(Review)

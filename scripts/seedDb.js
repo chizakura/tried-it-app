@@ -5,15 +5,18 @@ const { Review } = require('../models/models')
 const main = async () => {
     try {
         const user1 = await User.create({
-            name: "Fady"
+            name: "Fady",
+            email: "fady@fakemail.com"
         })
 
         const user2 = await User.create({
-            name: "Linda"
+            name: "Linda",
+            email: "linda@fakemail.com"
         })
 
         const user3 = await User.create({
-            name: "Shaban"
+            name: "Shaban",
+            email: "shaban@fakemail.com"
         })
 
         const review1 = await Review.create({
@@ -42,34 +45,43 @@ const main = async () => {
         })
         const place1 = await Place.create({
             name: "Luigis Pizza",
-            categroy: "food",
-            address: "123 Main ST New York, New York"
+            category: "food",
+            address: "123 Main ST New York, New York",
+            phone: "718-987-9807",
+            description: "small pizza shop on the corner of Main ST"
 
 
         })
         const place2 = await Place.create({
-            name: "Korean Food",
-            categroy: "food",
-            address: "345 5th AVE New York, New York"
+            name: "Abiko Curry",
+            category: "food",
+            address: "345 5th AVE New York, New York",
+            phone: "212-997-9807",
+            description: "delicious Japanese-Korean style curry"
         })
         const place3 = await Place.create({
             name: "Rafiqs Halal",
-            categroy: "food",
-            address: "122 42 ST AVE New York, New York"
+            category: "food",
+            address: "122 42 ST AVE New York, New York",
+            phone: "646-909-9807",
+            description: "rainbow colored cart you can't miss it !!"
         })
 
-        await user1.setReview(review1)
-        await user2.setReview(review2)
-        await user3.setReview(review3)
-        await place1.setReview(review1)
-        await place2.setReview(review2)
-        await place3.setReview(review3)
+        await review1.setUser(user1)
+        await review2.setUser(user2)
+        await review3.setUser(user3)
+        await review1.setPlace(place1)
+        await review2.setPlace(place2)
+        await review3.setPlace(place3)
+
     }
-    catch{ 
+    catch{
         (err => {
-        res.status(500).json(err)
-    })
-}
+            res.status(500).json(err)
+        })
+    } finally {
+        process.exit();
+    }
 
 }
 main()
