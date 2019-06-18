@@ -14,8 +14,8 @@ app.use((err, req, res, next)=>{
     res.status(500).json({message: err.message})
 })
 app.use('/user',userRouter)
-app.use('/review',reviewRouter)
-app.use('/place',placeRouter)
+// app.use('/review',reviewRouter)
+// app.use('/place',placeRouter)
 
 const PORT = process.env.PORT || 4567
 
