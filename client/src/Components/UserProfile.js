@@ -1,1 +1,0 @@
-// this page displays list of places of a specific user
