@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 class NewsFeed extends Component {
     render() {
         return (
-            <div>
+            <div className="news-container">
                 <p>Show feed of reviews</p>
             </div>
         )

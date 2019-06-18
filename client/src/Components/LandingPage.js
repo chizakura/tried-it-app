@@ -14,9 +14,11 @@ class LandingPage extends Component {
                 <nav>
                     <Link to="/create/user">Add User</Link>
                 </nav>
-                <h1>Tried It</h1>
-                <SearchBar/>
-                <NewsFeed/>
+                <div className="home">
+                    <h1>Tried It</h1>
+                    <SearchBar/>
+                    <NewsFeed/>
+                </div>
             </div>
         )
     }

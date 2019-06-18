@@ -25,7 +25,7 @@ class CreateReview extends Component {
                     </div>
                     <div>
                         <label>Entry</label>
-                        <textarea name="entry" rows="5" cols="40"></textarea>
+                        <textarea name="entry" rows="5" cols="20"></textarea>
                     </div>
                     <div>
                         <input type="submit"/>

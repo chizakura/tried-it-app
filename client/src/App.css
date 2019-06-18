@@ -2,10 +2,14 @@
   text-align: center;
 }
 
+/* CreateReview and CreateUser */
 .form {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
+  border: gold 2px solid;
+  border-radius: 25px;
+  padding: 30px;
 }
 
 .form div {
@@ -16,11 +20,36 @@
 }
 
 .form input {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.form textarea {
+  font-size: 18px;
 }
 
 .date input{
   font-size: 18px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.home h1 {
+  margin: 50px;
+}
+
+.news-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: crimson 2px solid;
+  margin: 50px;
+  padding: 5px;
 }
 
 a {

@@ -7,6 +7,7 @@ class CreateUser extends Component {
         return (
             <div>
                 <nav>
+                    <Link to="/">Home</Link>
                     <Link to="/create/review">Add Review</Link>
                 </nav>
                 <h1>Add User Form</h1>
@@ -14,6 +15,10 @@ class CreateUser extends Component {
                     <div>
                         <label>Name</label>
                         <input name="name" type="text"/>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input name="email" type="text"/>
                     </div>
                     <div>
                         <input type="submit"/>
