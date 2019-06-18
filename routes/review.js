@@ -38,7 +38,7 @@ reviewRouter.put('/review/:id/edit', async (req, res) => {
 })
 
 reviewRouter.delete('/:id', async (req, res) => {
-    let deleteReview = await Candy.destroy({
+    let deleteReview = await Review.destroy({
         where: {
             id: req.params.id
         }
