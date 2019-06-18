@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import SearchBar from './SearchBar';
+import ShowUser from './ShowUser';
+
 
 //This page includes Link to CreateUser
 //This page should import SearchBAr
@@ -12,6 +14,7 @@ class LandingPage extends Component {
             <div>
                 <h1>Tried It</h1>
                 <SearchBar />
+                <ShowUser />
             </div>
         )
     }
