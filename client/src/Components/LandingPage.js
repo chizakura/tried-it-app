@@ -20,7 +20,7 @@ class LandingPage extends Component {
                     <SearchBar/>
                     <NewsFeed/>
                 </div>
-
+            </div>
         )
     }
 }
