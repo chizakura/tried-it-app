@@ -1,10 +1,14 @@
 // This page should have a form to create reviews
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class CreateReview extends Component {
     render() {
         return (
             <div>
+                <nav>
+                    <Link to="/">Home</Link>
+                </nav>
                 <h1>Add Review Form</h1>
                 <form className="form">
                     <div className="date">
