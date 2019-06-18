@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "init": "dropdb --if-exists tried_it_db && createdb tried_it_db",
-    "reset": "node .scripts/resetDb.js",
-    "seed": "node .scripts/seedDb.js",
+    "reset": "node ./scripts/resetDb.js",
+    "seed": "node ./scripts/seedDb.js",
     "dev": "nodemon server.js",
     "client": "cd client && npm start"
   },
