@@ -26,11 +26,10 @@ const Review = db.define('review', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    
+       
     entry: {
         type: Sequelize.TEXT
     }
-
 })
 
 const Place = db.define('place', {
@@ -44,14 +43,12 @@ const Place = db.define('place', {
     address: {
         type: Sequelize.TEXT
     }
-
-
 })
 
 User.hasMany(Review)
-Review.belongTo(User)
 Place.hasMany(Review)
 Review.belongsTo(Place)
+Review.belongsTo(User)
 
 module.exports = {
     db,
