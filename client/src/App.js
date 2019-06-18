@@ -4,10 +4,10 @@ import {Switch, Route} from 'react-router-dom';
 import LandingPage from './Components/LandingPage';
 import CreateUser from './Components/CreateUser';
 import CreateReview from './Components/CreateReview';
-import UserProfile from './Components/UserProfile';
+import ShowUser from './Components/ShowUser';
 import ShowReview from './Components/ShowReview';
 import EditReview from './Components/EditReview';
-import ListOfUsers from './Components/ListOfUsers';
+import ShowPlace from './Components/ShowPlace';
 
 class App extends Component {
   render() {
@@ -17,10 +17,10 @@ class App extends Component {
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/create/user" component={CreateUser}/>
           <Route exact path="/create/review" component={CreateReview}/>
-          <Route exact path="/user/:id" component={UserProfile}/>
+          <Route exact path="/user/:id" component={ShowUser}/>
           <Route exact path="/review/:id" component={ShowReview}/>
           <Route exact path="/review/:id/edit" component={EditReview}/>
-          <Route exact path="/places/:id" component={ListOfUsers}/>
+          <Route exact path="/place/:id" component={ShowPlace}/>
         </Switch>
       </div>
     )
