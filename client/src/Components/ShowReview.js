@@ -1,9 +1,7 @@
 // this page is going to show the user's review of place
 //Should have edit and delete buttons
-
 import React, {Component} from 'react';
 import axios from 'axios';
-
 
 class ShowReview extends Component{
     constructor(props){
