@@ -30,7 +30,7 @@ class ShowReview extends Component{
                     <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>
                 </nav>
                 {/* issue right below */}
-                <h2>{this.state.review.user.name}</h2>
+                {/* <h2>{this.state.review.user}</h2> */}
                 <h4>{this.state.review.title}</h4>
                 <p>{entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p>
                 <p>{this.state.review.rating}</p>
