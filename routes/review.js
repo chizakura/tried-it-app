@@ -1,6 +1,6 @@
 const express = require('express')
 const reviewRouter = express.Router()
-const { Review } = require('../models/models')
+const { Review, Place } = require('../models/models')
 
 reviewRouter.get('/', async (req, res) => {
     const reviews = await Review.findAll()
@@ -14,6 +14,19 @@ reviewRouter.get('/:id', async (req, res) => {
         review: review
     })
 })
+//find reviews with a specific user_id
+reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
+    const reviews = await Review.findAll({
+        where: {
+            user_id : req.params.id
+        },
+        include: [Place]
+    })
+    res.json({
+        reviews: reviews
+    })
+})
+
 reviewRouter.post('/create', async (req, res) => {
     const newReview = await Review.create(req.body)
     res.json({

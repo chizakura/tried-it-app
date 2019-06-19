@@ -13,7 +13,7 @@ class ShowPlace extends Component{
 
     async componentDidMount(){
         const response = await axios.get(`/place/${this.props.match.params.id}`)
-        const place = response.data.specifiedPlace
+        const place = response.data.place
         this.setState({
             place
         })
@@ -23,8 +23,13 @@ class ShowPlace extends Component{
     render(){
         return (
             <div>
-                <h1>{this.state.place}</h1>
+                <h2>{this.state.place.name}</h2>
+                <h4>{this.state.place.category}</h4>
+                <p>{this.state.place.description}</p>
+                <p>{this.state.place.address}  -  <b>{this.state.place.phone}</b></p>
                 <ul>
+                    <li></li>
+                    <li></li>
                     <li></li>
                 </ul>
             </div>
