@@ -1,6 +1,7 @@
 // this page displays list of places of a specific user
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class ShowUser extends Component{
     constructor(props){
@@ -38,8 +39,13 @@ class ShowUser extends Component{
                 <h4>{this.state.user.email}</h4>
                 <ul>
                     {this.state.reviewsList.map(review => {
+                        const entryDate = new Date(review.createdAt);
                         return (
-                            <li key={review.id}>{review.place.name}</li>
+                            <li key={review.id}>
+                            <p><b><Link to={`/review/${review.id}`}>{review.place.name}</Link></b> - {review.place.category}</p>
+                            <p>{review.title}</p>
+                            {/* <p>{review.entry} - {entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p> */}
+                            </li>
                         )
                     })}
                 </ul>

@@ -1,21 +1,30 @@
 // This page should show list of users that link to their review of that place
 // this page displays list of places of a specific user
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class ShowPlace extends Component{
     constructor(props){
         super(props)
         this.state = {
-            place: {}
+            place: {},
+            usersList: []
         }
     }
 
     async componentDidMount(){
-        const response = await axios.get(`/place/${this.props.match.params.id}`)
-        const place = response.data.place
+        const response = await axios.get(`/place/${this.props.match.params.id}`);
+        const place = response.data.place;
+        const usersIdResponse = await axios.get(`/review/findPlaceUsers/${this.props.match.params.id}`);
+        let usersList = usersIdResponse.data.reviews;
+        // placesIdResponse.data.reviews.forEach(review  => {
+        //     placesIds.push(review.place)            
+        // });
+        
         this.setState({
-            place
+            place,
+            usersList
         })
     }
     
@@ -28,9 +37,11 @@ class ShowPlace extends Component{
                 <p>{this.state.place.description}</p>
                 <p>{this.state.place.address}  -  <b>{this.state.place.phone}</b></p>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {this.state.usersList.map(review => {
+                        return (
+                            <li key={review.id}>{review.user.name} - <b>{review.title}</b> - {review.entry}</li>
+                        )
+                    })}
                 </ul>
             </div>
         )
