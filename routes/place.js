@@ -14,6 +14,17 @@ placeRouter.get('/:id', async (req, res) => {
             place: place
         })    
 })
+//find places with id present in the given array id
+placeRouter.get('/findPlacesWithIdsArray/:id', async (req, res) => {
+        const place = await Place.findAll({
+            where :{
+                [Op.in]: req.params.id
+            }
+        })
+        res.json({
+            place: place
+        })    
+})
 
 module.exports = {
     placeRouter

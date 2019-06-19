@@ -31,7 +31,7 @@ class EditReview extends Component {
         })
     }
 
-    handleChange(e) {
+   async handleChange(e) {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({
@@ -65,21 +65,25 @@ class EditReview extends Component {
                     <input
                         type="text"
                         value={this.state.title}
+                        onChange={this.handleChange}
                     />
                     <label>Date: </label>
                     <input
                         type="date"
                         value={this.state.date}
+                        onChange={this.handleChange}
                     />
                     <label>Rating: </label>
                     <input
                         type="integer"
                         value={this.state.rating}
+                        onChange={this.handleChange}
                     />
                     <label>Entry: </label>
                     <input
                         type="text"
                         value={this.state.entry}
+                        onChange={this.handleChange}
                     />
                     <input type="submit" value="submit" />
                 </form>

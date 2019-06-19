@@ -1,53 +1,43 @@
 // This page should show user reviews
 import React, {Component} from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 class NewsFeed extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
-            reviews: []
+            review: {}
         }
     }
-    componentDidMount(){
-        this.fetchReviews()
-    }
 
-     async fetchReviews (){
+    async componentDidMount (){
         const res = await axios.get(`http://localhost:4567/review`)
-        const reviews = res.data.reviews
-        console.log(reviews)
+        const reviews = res.data.reviews;
+        let index = Math.floor(Math.random()*(reviews.length));
+        const review = reviews[index];
         this.setState({
-          reviews: reviews
+            review
         })
     }
 
-    renderReviews() {
-        if (this.state.reviews){
-            return this.state.reviews.map(review => {
-                return (
-                     <div>
-                         <h2>{review.title}</h2>
-                         <h3>{review.rating}</h3>
-                         <h4>{review.date}</h4>
-                         <p>{review.entry}</p>
-                    </div>
-                 )})
-             }
-    }
-    
     render() {
-    
-
+        const entryDate = new Date(this.state.review.date);
         return (
             <div className="news-container">
-                <div>
-                    {this.renderReviews()}
+                <div className="post">
+                    <div className="top">
+                        <p>{entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p>
+                        <h4>Rating: {this.state.review.rating}</h4>
+                    </div>
+                    <div className="title">
+                        <h2>{this.state.review.title}</h2>
+                    </div>
+                    <p>{this.state.review.entry}</p>
                 </div>
             </div>
         )
-     }
+    }
  }
 
 export default NewsFeed

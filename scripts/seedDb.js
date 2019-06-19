@@ -23,6 +23,7 @@ const main = async () => {
             name: "Dan",
             email: "dan@fakemail.com"
         })
+        
         const review1 = await Review.create({
             title: "Best pizza ever",
             date: "2018-10-10",
@@ -146,26 +147,42 @@ const main = async () => {
         await review2.setUser(user2)
         await review3.setUser(user3)
         await review4.setUser(user4)
-        await review5.setUser(user1)
-        await review6.setUser(user2)
-        await review7.setUser(user3)
-        await review8.setUser(user4)
-        await review9.setUser(user1)
-        await review10.setUser(user2)
-        await review11.setUser(user3)
-        await review12.setUser(user4)
+        await review5.setUser(user4)
+        await review6.setUser(user3)
+        await review7.setUser(user2)
+        await review8.setUser(user1)
+        await review9.setUser(user3)
+        await review10.setUser(user4)
+        await review11.setUser(user1)
+        await review12.setUser(user2)
+
         await review1.setPlace(place1)
         await review2.setPlace(place2)
         await review3.setPlace(place3)
         await review4.setPlace(place4)
-        await review5.setPlace(place1)
-        await review6.setPlace(place2)
-        await review7.setPlace(place3)
-        await review8.setPlace(place4)
-        await review9.setPlace(place1)
-        await review10.setPlace(place2)
-        await review11.setPlace(place3)
-        await review12.setPlace(place4)
+        await review5.setPlace(place3)
+        await review6.setPlace(place4)
+        await review7.setPlace(place1)
+        await review8.setPlace(place2)
+        await review9.setPlace(place4)
+        await review10.setPlace(place3)
+        await review11.setPlace(place2)
+        await review12.setPlace(place1)
+
+        await user1.addPlace(place1)
+        await user1.addPlace(place2)
+        await user1.addPlace(place2)
+        await user2.addPlace(place2)
+        await user2.addPlace(place1)
+        await user2.addPlace(place1)
+        await user3.addPlace(place3)
+        await user3.addPlace(place4)
+        await user3.addPlace(place4)
+        await user4.addPlace(place4)
+        await user4.addPlace(place3)
+        await user4.addPlace(place3)
+
+
     }
     catch{
         (err => {
