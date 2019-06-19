@@ -6,28 +6,42 @@ class ShowUser extends Component{
     constructor(props){
         super(props)
         this.state = {
-            user: {
-                name: "Dummy Dummer"
-            }
-            // ,places = []
+            user: {},
+            reviewsList: []
         }
     }
 
+    // This componentDidMount calls user api to show one specific user, it also calls the review table with user_id and gets
+    // PlacesIdResponse and saves it in placesId variable, which is to be used in the 3rd axios call to places table to 
+    // get place information.
+    
     async componentDidMount(){
-        const response = await axios.get(`/user/${this.props.match.params.id}`)
-        // const placesResponse = await axios.get(`/user/${this.props.match.params.id}`)
-        const user = response.data.specifiedUser
+        const response = await axios.get(`http://localhost:4567/user/${this.props.match.params.id}`);
+        const user = response.data.user;
+        const placesIdResponse = await axios.get(`http://localhost:4567/review/findUserPlaces/${this.props.match.params.id}`);
+        let reviewsList = placesIdResponse.data.reviews;
+        // placesIdResponse.data.reviews.forEach(review  => {
+        //     placesIds.push(review.place)            
+        // });
+        
         this.setState({
-            user
+            user,
+            reviewsList
         })
     }
 
     render(){
+        console.log(this.state.places)
         return (
-            <div>
+            <div className="App">
                 <h1>{this.state.user.name}</h1>
+                <h4>{this.state.user.email}</h4>
                 <ul>
-                    <li></li>
+                    {this.state.reviewsList.map(review => {
+                        return (
+                            <li key={review.id}>{review.place.name}</li>
+                        )
+                    })}
                 </ul>
             </div>
         )
