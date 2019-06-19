@@ -1,6 +1,6 @@
 // this page shows a form to edit a review
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios'
 
 class EditReview extends Component {
@@ -53,7 +53,7 @@ class EditReview extends Component {
             entry: e.target.value,
         })
     }
-    
+
     async handleSubmit(e) {
         e.preventDefault()
         await axios.put(`http://localhost:4567/review/${this.props.match.params.id}`, {
@@ -70,6 +70,7 @@ class EditReview extends Component {
     render() {
         return (
             <div>
+            {this.state.redirect ? <Redirect to={`/review/${this.props.match.params.id}`} /> : null}
                 <nav>
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}`}>Back</Link>
@@ -103,9 +104,10 @@ class EditReview extends Component {
                     </div>
                     <div className="entry">
                         <label>Entry: </label>
-                        <input
-                            type="text"
-                            value={this.state.entry}
+                        <textarea name="entry" 
+                        rows="5" 
+                        cols="20" 
+                         value={this.state.entry}
                             onChange={this.changeEntry}
                         />
                     </div>
