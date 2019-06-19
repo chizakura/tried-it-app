@@ -6,8 +6,8 @@ class ShowUser extends Component{
     constructor(props){
         super(props)
         this.state = {
-            user: {}
-            , places : ''
+            user: {},
+            reviewsList: []
         }
     }
 
@@ -16,33 +16,32 @@ class ShowUser extends Component{
     // get place information.
     
     async componentDidMount(){
-        const response = await axios.get(`/user/${this.props.match.params.id}`)
-        const user = response.data.user 
-        const placesIdResponse = await axios.get(`/review/findUserPlaces/${this.props.match.params.id}`)
-        let placesIds = []
-        placesIdResponse.data.reviews.forEach(review  => {
-            placesIds.push(review.placeId)            
-        });
-        // const placesResponse = await axios.get(`/place/findPlacesWithIdsArray/${placesIds}`)
-        let places = placesResponse.data
-        console.log(placesIds);
-        console.log(places);
-               
+        const response = await axios.get(`/user/${this.props.match.params.id}`);
+        const user = response.data.user;
+        const placesIdResponse = await axios.get(`/review/findUserPlaces/${this.props.match.params.id}`);
+        let reviewsList = placesIdResponse.data.reviews;
+        // placesIdResponse.data.reviews.forEach(review  => {
+        //     placesIds.push(review.place)            
+        // });
+        
         this.setState({
             user,
-            // places : placesResponse
+            reviewsList
         })
     }
 
     render(){
+        console.log(this.state.places)
         return (
-            <div>
+            <div className="App">
                 <h1>{this.state.user.name}</h1>
                 <h4>{this.state.user.email}</h4>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {this.state.reviewsList.map(review => {
+                        return (
+                            <li key={review.id}>{review.place.name}</li>
+                        )
+                    })}
                 </ul>
             </div>
         )

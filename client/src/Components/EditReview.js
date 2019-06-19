@@ -1,35 +1,18 @@
 // this page shows a form to edit a review
 import React, {Component} from 'react';
-// import axios from 'axios';
+import {Link} from 'react-router-dom';
 
-class EditReview extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            review: {}
-        }
+class EditReview extends Component {
+    render() {
+        return (
+            <div>
+                <nav>
+                    <Link to="/">Home</Link>
+                    <Link to={`/review/${this.props.match.params.id}`}>Back</Link>
+                </nav>
+                <h1>Edit Review</h1>
+            </div>
+        )
     }
-
-    // async componentDidMount(){
-    //     const response = await axios.get(`/user/${this.props.match.params.id}`)
-    //     // const placesResponse = await axios.get(`/user/${this.props.match.params.id}`)
-    //     const user = response.data.user
-    //     console.log(user);
-        
-    //     this.setState({
-    //         user
-    //     })
-    // }
-
-    // render(){
-    //     return (
-    //         <div>
-    //             <h1>{this.state.user.name}</h1>
-    //             <ul>
-    //                 <li></li>
-    //             </ul>
-    //         </div>
-    //     )
-    // }
 }
 export default EditReview;

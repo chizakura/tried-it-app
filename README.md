@@ -70,8 +70,8 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | LandingPage | This will be the main page which includes the search bar and news feed |
 | SearchBar | This will render the search bar that shows a list of places and users |
 | NewsFeed | This will render a list of reviews with data taken from an API |
-| ListOfUsers | This will render a list of users based on the place that was selected in the search |
-| UserProfile | This will render a list of places based on the user that was selected in the search |
+| ShowPlace | This will render a list of users based on the place that was selected in the search |
+| ShowUser | This will render a list of places based on the user that was selected in the search |
 | ShowReview | This will render a specific user's review of a place they have been |
 | CreateUser | This will render a form to create a new user |
 | CreateReview | This will render a form to create a new review |

@@ -23,8 +23,7 @@ const main = async () => {
             name: "Dan",
             email: "dan@fakemail.com"
         })
-
-
+        
         const review1 = await Review.create({
             title: "Best pizza ever",
             date: "2018-10-10",

@@ -1,6 +1,6 @@
 const express = require('express')
 const reviewRouter = express.Router()
-const { Review } = require('../models/models')
+const { Review, Place } = require('../models/models')
 
 reviewRouter.get('/', async (req, res) => {
     const reviews = await Review.findAll()
@@ -19,7 +19,8 @@ reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
     const reviews = await Review.findAll({
         where: {
             user_id : req.params.id
-        }
+        },
+        include: [Place]
     })
     res.json({
         reviews: reviews

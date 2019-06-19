@@ -80,8 +80,13 @@ Place.hasMany(Review)
 Review.belongsTo(Place)
 Review.belongsTo(User)
 
+<<<<<<< HEAD
 User.belongsToMany(Place, { through: 'userPlaces' })
 Place.belongsToMany(User, { through: 'userPlaces' })
+=======
+// User.belongsToMany(Place, { through: 'userPlaces' })
+// Place.belongsToMany(User, { through: 'userPlaces' })
+>>>>>>> master
 
 // User.belongsToMany(Place, { 
 //     through: Review,
