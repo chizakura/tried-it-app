@@ -15,7 +15,10 @@ class EditReview extends Component {
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+        this.changeTitle = this.changeTitle.bind(this)
+        this.changeDate = this.changeDate.bind(this)
+        this.changeRating = this.changeRating.bind(this)
+        this.changeEntry = this.changeEntry.bind(this)
     }
     async componentDidMount() {
         const res = await axios.get(`http://localhost:4567/review/${this.props.match.params.id}`)
@@ -30,14 +33,27 @@ class EditReview extends Component {
             entry: reviews.entry
         })
     }
-
-   async handleChange(e) {
-        const name = e.target.name;
-        const value = e.target.value;
+    changeTitle(e) {
         this.setState({
-            [name]: value
+            title: e.target.value,
         })
     }
+    changeDate(e) {
+        this.setState({
+            date: e.target.value,
+        })
+    }
+    changeRating(e) {
+        this.setState({
+            rating: e.target.value,
+        })
+    }
+    changeEntry(e) {
+        this.setState({
+            entry: e.target.value,
+        })
+    }
+    
     async handleSubmit(e) {
         e.preventDefault()
         await axios.put(`http://localhost:4567/review/${this.props.match.params.id}`, {
@@ -58,34 +74,47 @@ class EditReview extends Component {
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}`}>Back</Link>
                 </nav>
-                <form
-                    onChange={this.handleChange}
-                    onSubmit={this.handleSubmit}>
-                    <label>Title: </label>
-                    <input
-                        type="text"
-                        value={this.state.title}
-                        onChange={this.handleChange}
-                    />
-                    <label>Date: </label>
-                    <input
-                        type="date"
-                        value={this.state.date}
-                        onChange={this.handleChange}
-                    />
-                    <label>Rating: </label>
-                    <input
-                        type="integer"
-                        value={this.state.rating}
-                        onChange={this.handleChange}
-                    />
-                    <label>Entry: </label>
-                    <input
-                        type="text"
-                        value={this.state.entry}
-                        onChange={this.handleChange}
-                    />
-                    <input type="submit" value="submit" />
+                <form className="form"
+                    onSubmit={this.handleSubmit}
+                >
+                    <div className="title">
+                        <label>Title: </label>
+                        <input
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.changeTitle}
+                        />
+                    </div>
+                    <div className="date">
+                        <label>Date: </label>
+                        <input
+                            type="date"
+                            value={this.state.date}
+                            onChange={this.changeDate}
+                        />
+                    </div>
+                    <div className="rating">
+                        <label>Rating: </label>
+                        <input
+                            type="integer"
+                            value={this.state.rating}
+                            onChange={this.changeRating}
+                        />
+                    </div>
+                    <div className="entry">
+                        <label>Entry: </label>
+                        <input
+                            type="text"
+                            value={this.state.entry}
+                            onChange={this.changeEntry}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="submit"
+                            value="submit"
+                        />
+                    </div>
                 </form>
             </div>
         )
