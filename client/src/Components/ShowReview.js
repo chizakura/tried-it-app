@@ -15,7 +15,7 @@ class ShowReview extends Component{
 
     async componentDidMount(){
         const response = await axios.get(`/review/${this.props.match.params.id}`)
-        const review = response.data.specifiedReview
+        const review = response.data.review
         this.setState({
             review
         })
@@ -25,7 +25,8 @@ class ShowReview extends Component{
     render(){
         return (
             <div>
-                <h1>{this.state.review}</h1>
+                <h1>{this.state.review.title}</h1>
+                <h4>{this.state.review.entry}</h4>
 
             </div>
         )

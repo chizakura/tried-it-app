@@ -80,6 +80,20 @@ Place.hasMany(Review)
 Review.belongsTo(Place)
 Review.belongsTo(User)
 
+User.belongsToMany(Place, { through: 'userPlaces' })
+Place.belongsToMany(User, { through: 'userPlaces' })
+
+// User.belongsToMany(Place, { 
+//     through: Review,
+//     as: 'place',
+//     foreignKey: 'place_id'
+// })
+// Place.belongsToMany(User, { 
+//     through: Review,
+//     as: 'user',
+//     foreignKey: 'user_id'
+// })
+
 module.exports = {
     db,
     User,
