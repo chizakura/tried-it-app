@@ -18,10 +18,7 @@ class ShowPlace extends Component{
         const place = response.data.place;
         const usersIdResponse = await axios.get(`/review/findPlaceUsers/${this.props.match.params.id}`);
         let usersList = usersIdResponse.data.reviews;
-        // placesIdResponse.data.reviews.forEach(review  => {
-        //     placesIds.push(review.place)            
-        // });
-        
+
         this.setState({
             place,
             usersList
@@ -39,7 +36,7 @@ class ShowPlace extends Component{
                 <ul>
                     {this.state.usersList.map(review => {
                         return (
-                            <li key={review.id}>{review.user.name} - <b>{review.title}</b> - {review.entry}</li>
+                            <li key={review.id}><Link to={`/user/${review.user.id}`}>{review.user.name}</Link> - <b>{review.title}</b> - {review.entry}</li>
                         )
                     })}
                 </ul>

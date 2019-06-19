@@ -32,14 +32,14 @@ class ShowUser extends Component{
     }
 
     render(){
-        console.log(this.state.places)
+        // console.log(this.state.places)
         return (
             <div className="App">
                 <h1>{this.state.user.name}</h1>
                 <h4>{this.state.user.email}</h4>
                 <ul>
                     {this.state.reviewsList.map(review => {
-                        const entryDate = new Date(review.createdAt);
+                        // const entryDate = new Date(review.date);
                         return (
                             <li key={review.id}>
                             <p><b><Link to={`/review/${review.id}`}>{review.place.name}</Link></b> - {review.place.category}</p>

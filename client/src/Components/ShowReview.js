@@ -9,7 +9,9 @@ class ShowReview extends Component{
         super();
 
         this.state = {
-            review: {}
+            review: {},
+            user: {},
+            place: {}
         }
     }
 
@@ -17,7 +19,9 @@ class ShowReview extends Component{
         const res = await axios.get(`/review/${this.props.match.params.id}`)
         
         this.setState({
-            review: res.data.review
+            review: res.data.review,
+            user: res.data.review.user,
+            place: res.data.review.place,
         })
     }
     
@@ -29,9 +33,9 @@ class ShowReview extends Component{
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>
                 </nav>
-                {/* issue right below */}
-                {/* <h2>{this.state.review.user}</h2> */}
-                <h4>{this.state.review.title}</h4>
+                <h4><Link to={`/user/${this.state.user.id}`}>{this.state.user.name}</Link></h4>
+                <h2><Link to={`/place/${this.state.place.id}`}>{this.state.place.name}</Link></h2>
+                <h2>{this.state.review.title}</h2>
                 <p>{entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p>
                 <p>{this.state.review.rating}</p>
                 <p>{this.state.review.entry}</p>

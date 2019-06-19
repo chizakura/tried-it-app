@@ -2,8 +2,12 @@ const express = require('express')
 const reviewRouter = express.Router()
 const { Review, Place, User } = require('../models/models')
 
+
 reviewRouter.get('/', async (req, res) => {
-    const reviews = await Review.findAll()
+    const reviews = await Review.findAll({
+        where: {},
+        include: [ User, Place ]
+    })
     res.json({
         reviews: reviews
     })
