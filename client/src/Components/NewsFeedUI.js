@@ -1,20 +1,97 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Feed } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-const FeedExampleSummaryDate = () => (
-  <Feed>
-    <Feed.Event>
-      <Feed.Label>
-        <img src='/images/avatar/small/jenny.jpg' />
-      </Feed.Label>
-      <Feed.Content>
-        <Feed.Summary>
-          You added <a>Jenny Hess</a> to your <a>coworker</a> group.
-          <Feed.Date>3 days ago</Feed.Date>
-        </Feed.Summary>
-      </Feed.Content>
-    </Feed.Event>
-  </Feed>
-)
+class FeedExampleSummaryDate extends Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            reviewsArray: [],
+            // place: {},
+            // user: {}
+        }
+        this.setIcon = this.setIcon.bind(this)
+    }
+
+
+    async componentDidMount (){
+        let reviewsArray = []
+        const res = await axios.get(`/review`)
+        const reviews = res.data.reviews;        
+ 
+        let index1 = reviews.length -1;
+        let index2 = reviews.length -2;
+        let index3 = reviews.length -3;
+        reviewsArray.push(reviews[index1], reviews[index2], reviews[index3])
+        // const place = reviews.place
+        // const user = reviews.user
+        
+        this.setState({
+            reviewsArray,
+            // place,
+            // user
+        })
+    }
+
+    setIcon(category){
+        let icon 
+        switch (category) {
+            case 'food':
+                icon = "fastfood"
+                break;
+            case 'club':
+                icon = "queue_music"
+                break;
+            case 'education':
+                icon = "school"
+                break;
+            case 'activity':
+                icon = "directions_run"
+                break;
+        
+            default:
+                break;
+        }
+
+        return icon
+    }
+
+
+    render(){
+        const { reviewsArray } = this.state
+        return (
+        <Feed>
+            {reviewsArray.map( (review, key) =>
+            <div key={key}>
+                <Feed.Event> 
+                    <Feed.Content>
+                        <Feed.Summary>
+                            <span className='material-icons'>{this.setIcon(review.place.category)}</span>
+                            {/* <em><Feed.Date>3 days ago</Feed.Date></em> */}
+                            <span>
+                                <Link to={`/user/${review.user.id}`}>{review.user.name}</Link> Tried 
+                                <Link to={`/place/${review.place.id}`}>  {review.place.name}   </Link>
+                                <br />
+                                go checkout their<Link to={`/review/${review.id}`}> TriedIt</Link>
+                            </span>
+                        </Feed.Summary>
+                    </Feed.Content>
+                </Feed.Event>
+                </div>
+            )}
+        </Feed>
+        )
+    }
+}
+
 
 export default FeedExampleSummaryDate
+
+
+
+
+
+
+
+    

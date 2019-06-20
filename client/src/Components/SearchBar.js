@@ -16,17 +16,17 @@ class SearchBar extends Component {
     }
 
     async componentDidMount() {
-        const places = await axios.get(`http://localhost:4567/place/findByName/lu`);
-        console.log(places)
-        this.setState({
+        // const places = await axios.get(`http://localhost:4567/place/findByName/lu`);
+        // console.log(places)
+        // this.setState({
             // placesList: places.data.places
-        })
+        // })
     }
 
     async handleSearch(event) {
         let name = event.target.name;
         let value = event.target.value;
-        const places = await axios.get(`http://localhost:4567/place/findByName/${value}`);
+        const places = await axios.get(`/place/findByName/${value}`);
         console.log(places)
         // let searchList = this.state.placesList.filter(place => {
         //     return place.name.includes(value);
