@@ -1,5 +1,11 @@
+#root {
+  height: 100%
+}
+
 .App {
   text-align: center;
+  height: 100%
+
 }
 
 a {
@@ -10,12 +16,24 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  background-color: #EBFCFB;
+}
+
+.inside-app {
+  height: 100%;
+  /* width: 800px; */
+
+  background-image: url('./postits.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  
 }
 
 /* CreateReview and CreateUser */
 .form {
   display: inline-flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: gold 2px solid;
   border-radius: 25px;
@@ -40,14 +58,23 @@ nav {
 .date input{
   font-size: 18px;
 }
+.before-home{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+}
 
 /* LandingPage */
 .home {
+  height: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
+  align-self: center;
   justify-content: center;
-  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 /* NewsFeed */
