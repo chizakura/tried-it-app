@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import SearchBar from './SearchBar';
-import NewsFeed from './NewsFeed';
+import NewsFeed from './NewsFeedUI';
 
 //This page includes Link to Signup
 //This page should import SearchBAr
