@@ -17,9 +17,9 @@ class SearchBar extends Component {
 
     async componentDidMount() {
         const places = await axios.get(`http://localhost:4567/place/findByName/lu`);
-        console.log(places)
+        // console.log(places)
         this.setState({
-            // placesList: places.data.places
+            placesList: places.data.places
         })
     }
 
