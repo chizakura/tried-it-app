@@ -1,16 +1,22 @@
 
 .App {
   text-align: center;
+  font-size: 20px;
 }
-body{
-  /* background-color: rgb(247, 250, 251); */
-  background-color: white;
+.App p{
+  font-size: 20px;
+}
+.place-review{
+  display: flex
+}
 
+body{
+  background-color: white;
+}
+p{
+  font-size: 20px;
 }
 /* user page */
-ul {
-  list-style-type: none;
-  }
  
 /* used format from https://freefrontend.com/css-buttons/ */
 nav a {
@@ -49,6 +55,7 @@ input[type=submit]{
   cursor: pointer;
   width:100px
 }
+/* Used for design on forms https://freefrontend.com/css-forms/ */
 .form {
   display: inline-flex;
   flex-direction: column;
@@ -103,23 +110,13 @@ box-shadow:0 0 10px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 30px;
 }
-img{
-  width: 400px;
-  height:300px;
+.ui.feed *{
+  margin: 5% auto;
 }
+
 /* NewsFeed */
-.news-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: white 2px solid;
-  margin: 50px;
-  padding: 20px;
-  border-radius:30px;
-  background-color: #3D9970;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
 
 .post {
   display: flex;
@@ -168,21 +165,8 @@ h1{
 }
 
 /* User Review Page */
-div ul li{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin:50px;
-  padding:50px;
-  height:150px;
-  background-color:rgb(251, 251, 251);
-  border:1px solid;
-  border-radius:40px;
-  border-radius: 25px;
-  padding: 30px;
-  font-size: 40px;
-}
-/* imported font from https://www.cssfontstack.com/Optima */
+
+
 .review{
   background-color: #3D9970;
  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;  
@@ -194,6 +178,7 @@ div ul li{
   width:700px;
   margin-left: 530px;
   border-radius: 20px;
+  padding:7px;
 }
 .review a{
   color: white; 
@@ -201,4 +186,30 @@ div ul li{
 }
 .review p {
   font-size: 30px;
+  line-height: 40px;
+}
+
+.review-box{
+  margin: 5%;
+  padding: 10px;
+  border: 2px solid;
+  background-color: #3D9970;
+  display: flex;
+  flex-flow: column;
+  width:40%;
+
+}
+.review-box a {
+  margin-bottom: 1%;
+}
+.review-box p{
+  font-size: 20px;
+}
+.all-reviews *{
+  margin: 5% auto;
+
+}
+.user-reviews *{
+  margin: 5% auto;
+  font-size: 20px;
 }

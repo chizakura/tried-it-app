@@ -33,21 +33,24 @@ class ShowUser extends Component{
 
     render(){
         return (
-            <div className="App">
+            <div>
+            <div className="user-info">
                 <h1>{this.state.user.name}</h1>
                 <h4>{this.state.user.email}</h4>
-                <ul>
+                </div>
+            <div className="user-reviews">
                     {this.state.reviewsList.map(review => {
                         // const entryDate = new Date(review.date);
                         return (
-                            <li key={review.id}>
+                          <div className="review-box"
+                             key={review.id}>
                             <p><b><Link to={`/review/${review.id}`}>{review.place.name}</Link></b> - {review.place.category}</p>
                             <p>{review.title}</p>
                             {/* <p>{review.entry} - {entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p> */}
-                            </li>
+                          </div>
                         )
                     })}
-                </ul>
+            </div>
             </div>
         )
     }
