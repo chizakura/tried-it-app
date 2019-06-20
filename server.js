@@ -26,8 +26,8 @@ app.use('/app', authorized, appRouter)
 app.use(passport.initialize());
 
 app.use((err, req, res, next)=>{
-    console.warn(err.stack)
-    res.status(500).json({message: err.message})
+    res.status(err.status || 500)
+    res.json({ message: err.message })
 })
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))

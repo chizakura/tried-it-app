@@ -3,8 +3,18 @@ const authRouter = express.Router();
 const {passport, jwtSign} = require('../auth/handleAuth');
 
 authRouter.post('/signup', async(req, res, next) => {
-    passport.authenticate('signup', async(err, user) => {
+    passport.authenticate('signup', async(err, user, info = {}) => {
         try {
+            if(err) {
+                return next(err)
+            }
+
+            if(!user) {
+                let error = new Error(info.message || 'An error occurred during signup');
+                error.status = 400;
+                return next(error)
+            }
+
             const {email, id} = user;
             const payload = {email, id}
             const token = jwtSign(payload);
@@ -17,10 +27,14 @@ authRouter.post('/signup', async(req, res, next) => {
 })
 
 authRouter.post('/login', (req, res, next) => {
-    passport.authenticate('login', async(err, user, info) => {
+    passport.authenticate('login', async(err, user, info = {}) => {
         try {
-            if(err || !user) {
-                const error = new Error('An Error Occurred');
+            if(err) {
+                return next(err)
+            }
+            if(!user) {
+                const error = new Error(info.message || 'An error occurred during login');
+                error.status = 400;
                 return next(error)
             }
 
@@ -34,7 +48,7 @@ authRouter.post('/login', (req, res, next) => {
                 const token = jwtSign(payload);
 
                 // return the user object
-                return res.json({user, token, message: "User logged in successfully"})
+                return res.json({user, token, message: "User successfully loggedin"})
             })
         } catch (error) {
             return next(error)
