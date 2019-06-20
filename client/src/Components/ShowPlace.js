@@ -33,13 +33,19 @@ class ShowPlace extends Component{
                 <h4>{this.state.place.category}</h4>
                 <p>{this.state.place.description}</p>
                 <p>{this.state.place.address}  -  <b>{this.state.place.phone}</b></p>
-                <ul>
+              <div className="all-reviews">
                     {this.state.usersList.map(review => {
                         return (
-                            <li key={review.id}><Link to={`/user/${review.user.id}`}>{review.user.name}</Link> - <b>{review.title}</b> - {review.entry}</li>
+                            <div className="review-box" key={review.id}>
+                            <Link to={`/user/${review.user.id}`}>{review.user.name}</Link> 
+                            <b>{review.title}</b>
+                             <p>{review.entry}</p>
+                            </div>
+                            
+                        
                         )
                     })}
-                </ul>
+                    </div>
             </div>
         )
     }

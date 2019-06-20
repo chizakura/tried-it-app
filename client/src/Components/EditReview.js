@@ -37,25 +37,21 @@ class EditReview extends Component {
             entry: reviews.entry
         })
     }
-
     changeTitle(e) {
         this.setState({
             title: e.target.value,
         })
     }
-
     changeDate(e) {
         this.setState({
             date: e.target.value,
         })
     }
-
     changeRating(e) {
         this.setState({
             rating: e.target.value,
         })
     }
-
     changeEntry(e) {
         this.setState({
             entry: e.target.value,
@@ -70,7 +66,6 @@ class EditReview extends Component {
             rating: this.state.rating,
             entry: this.state.entry
         })
-
         this.setState({
             redirect: true
         })

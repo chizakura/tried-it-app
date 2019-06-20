@@ -33,12 +33,14 @@ class ShowReview extends Component{
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>
                 </nav>
+                <div className="review">
                 <h4><Link to={`/user/${this.state.user.id}`}>{this.state.user.name}</Link></h4>
                 <h2><Link to={`/place/${this.state.place.id}`}>{this.state.place.name}</Link></h2>
                 <h2>{this.state.review.title}</h2>
                 <p>{entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p>
                 <p>{this.state.review.rating}</p>
                 <p>{this.state.review.entry}</p>
+                </div>
             </div>
         )
     }
