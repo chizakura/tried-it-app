@@ -1,34 +1,38 @@
 // this page shows a form to edit a review
-import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios'
+import React, {Component} from 'react';
+import {Link, Redirect} from 'react-router-dom';
+import axios from 'axios';
 
 class EditReview extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+
         this.state = {
             reviews: [],
             title: "",
             date: "",
             rating: "",
-            entry: ""
+            entry: "",
+            redirect: false
 
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.changeTitle = this.changeTitle.bind(this)
-        this.changeDate = this.changeDate.bind(this)
-        this.changeRating = this.changeRating.bind(this)
-        this.changeEntry = this.changeEntry.bind(this)
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeTitle = this.changeTitle.bind(this);
+        this.changeDate = this.changeDate.bind(this);
+        this.changeRating = this.changeRating.bind(this);
+        this.changeEntry = this.changeEntry.bind(this);
     }
+
     async componentDidMount() {
-        const res = await axios.get(`http://localhost:4567/review/${this.props.match.params.id}`)
-        const reviews = res.data.review
-        console.log(reviews);
+        const res = await axios.get(`http://localhost:4567/review/${this.props.match.params.id}`);
+        const reviews = res.data.review;
+        const entryDate = new Date(reviews.date)
 
         this.setState({
             reviews: reviews,
             title: reviews.title,
-            date: reviews.date,
+            date: entryDate.toISOString().split('T')[0],
             rating: reviews.rating,
             entry: reviews.entry
         })
@@ -55,7 +59,7 @@ class EditReview extends Component {
     }
 
     async handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
         await axios.put(`http://localhost:4567/review/${this.props.match.params.id}`, {
             title: this.state.title,
             date: this.state.date,
@@ -70,14 +74,12 @@ class EditReview extends Component {
     render() {
         return (
             <div>
-            {this.state.redirect ? <Redirect to={`/review/${this.props.match.params.id}`} /> : null}
+                {this.state.redirect ? <Redirect to={`/review/${this.props.match.params.id}`} /> : null}
                 <nav>
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}`}>Back</Link>
                 </nav>
-                <form className="form"
-                    onSubmit={this.handleSubmit}
-                >
+                <form className="form" onSubmit={this.handleSubmit}>
                     <div className="title">
                         <label>Title: </label>
                         <input
@@ -122,5 +124,4 @@ class EditReview extends Component {
         )
     }
 }
-
 export default EditReview;

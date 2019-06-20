@@ -1,42 +1,63 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class SearchBar extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            searchTerm : ''
-        }
-        this.handleInput = this.handleInput.bind(this)
-    }
-    handleInput(event){
-        event.preventDefault()
+    constructor(){
+        super();
 
-        let name = event.target.name
-        let value = event.target.value
+        this.state = {
+            searchTerm: "",
+            placesList: [],
+            usersList: [],
+            searchList: []
+        }
+
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    async componentDidMount() {
+        const places = await axios.get(`http://localhost:4567/place/findByName/lu`);
+        console.log(places)
         this.setState({
-            [name]: value
+            // placesList: places.data.places
+        })
+    }
+
+    async handleSearch(event) {
+        let name = event.target.name;
+        let value = event.target.value;
+        const places = await axios.get(`http://localhost:4567/place/findByName/${value}`);
+        console.log(places)
+        // let searchList = this.state.placesList.filter(place => {
+        //     return place.name.includes(value);
+        // })
+        this.setState({
+            [name]: value,
+            searchList: places
         })
     }
 
     render() {
         return (
-            <form onChange={this.handleInput}>
+            <form onChange={this.handleSearch}>
                 <input 
-                name='searchTerm'
-                type='text'
-                list="ice-cream-flavors"
-                placeholder='Look for ......'
-                value={this.state.searchTerm}
-                onChange={function(){}}
+                    name='searchTerm'
+                    type='text'
+                    list="ice-cream-flavors"
+                    placeholder='Look for place or friend'
+                    value={this.state.searchTerm}
+                    onChange={function(){}}
                 />
-                <datalist id="ice-cream-flavors">
-                    <option value="Chocolate" />
-                    <option value="mms" />
-                    <option value="rockyroad" />
+                {/* <datalist id="ice-cream-flavors">
+                    <optgroup label="places">
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="mms" />
+                        <option value="rockyroad" />
+                    </optgroup>
                     <option value="icecream" />
                     <option value="sugarrush" />
                     <option value="musketeers" />
-                </datalist>
+                </datalist> */}
             </form>
         )
     }

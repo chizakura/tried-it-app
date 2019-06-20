@@ -1,6 +1,7 @@
 // this page displays list of places of a specific user
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class ShowUser extends Component{
     constructor(props){
@@ -16,9 +17,9 @@ class ShowUser extends Component{
     // get place information.
     
     async componentDidMount(){
-        const response = await axios.get(`http://localhost:4567/user/${this.props.match.params.id}`);
+        const response = await axios.get(`/user/${this.props.match.params.id}`);
         const user = response.data.user;
-        const placesIdResponse = await axios.get(`http://localhost:4567/review/findUserPlaces/${this.props.match.params.id}`);
+        const placesIdResponse = await axios.get(`/review/findUserPlaces/${this.props.match.params.id}`);
         let reviewsList = placesIdResponse.data.reviews;
         // placesIdResponse.data.reviews.forEach(review  => {
         //     placesIds.push(review.place)            
@@ -31,15 +32,19 @@ class ShowUser extends Component{
     }
 
     render(){
-        console.log(this.state.places)
         return (
             <div className="App">
                 <h1>{this.state.user.name}</h1>
                 <h4>{this.state.user.email}</h4>
                 <ul>
                     {this.state.reviewsList.map(review => {
+                        // const entryDate = new Date(review.date);
                         return (
-                            <li key={review.id}>{review.place.name}</li>
+                            <li key={review.id}>
+                            <p><b><Link to={`/review/${review.id}`}>{review.place.name}</Link></b> - {review.place.category}</p>
+                            <p>{review.title}</p>
+                            {/* <p>{review.entry} - {entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p> */}
+                            </li>
                         )
                     })}
                 </ul>

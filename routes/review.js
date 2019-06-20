@@ -1,15 +1,25 @@
 const express = require('express')
 const reviewRouter = express.Router()
-const { Review, Place } = require('../models/models')
+const { Review, Place, User } = require('../models/models')
+
 
 reviewRouter.get('/', async (req, res) => {
-    const reviews = await Review.findAll()
+    const reviews = await Review.findAll({
+        where: {},
+        include: [ User, Place ]
+    })
     res.json({
         reviews: reviews
     })
 })
+
 reviewRouter.get('/:id', async (req, res) => {
-    const review = await Review.findByPk(req.params.id)
+    const review = await Review.findOne({
+        where: {
+            id : req.params.id
+        },
+        include: [Place, User]
+    })
     res.json({
         review: review
     })
@@ -21,6 +31,18 @@ reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
             user_id : req.params.id
         },
         include: [Place]
+    })
+    res.json({
+        reviews: reviews
+    })
+})
+
+reviewRouter.get('/findPlaceUsers/:id', async (req, res) => {
+    const reviews = await Review.findAll({
+        where: {
+            place_id : req.params.id
+        },
+        include: [User]
     })
     res.json({
         reviews: reviews
