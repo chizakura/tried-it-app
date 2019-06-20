@@ -9,7 +9,8 @@ class Login extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            showError: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -30,11 +31,19 @@ class Login extends Component {
         try {
             await this.props.handleLogin({email, password});
         } catch (err) {
-            console.log(err)
+            this.setState({showError: true})
         }
     }
 
     render() {
+        let errorMessage;
+        if(this.state.showError) {
+            errorMessage = (
+                <div className="errorMessage">
+                    An error occurred, please ensure your credentials are correct
+                </div>
+            )
+        }
         return (
             <div>
                 {this.props.isSignedIn ? <Redirect to="/"/> : null}
@@ -43,6 +52,7 @@ class Login extends Component {
                 </nav>
                 <h1>Login</h1>
                 <form className="form" onSubmit={this.handleSubmit}>
+                    {errorMessage}
                     <div>
                         <label>Email</label>
                         <input name="email" type="email" onChange={this.handleChange} value={this.state.email} required/>

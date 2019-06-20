@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import authService from './services/authService';
-import {login, getProfile} from './services/apiService';
+import {login, getProfile, signup} from './services/apiService';
 import ProtectedRoute from './Components/ProtectedRoute';
 import LandingPage from './Components/LandingPage';
 import Login from './Components/Login';
@@ -23,6 +23,8 @@ class App extends Component {
     }
 
     this.loginUser = this.loginUser.bind(this);
+    this.signoutUser = this.signoutUser.bind(this);
+    this.signupUser = this.signupUser.bind(this);
   }
 
   async componentDidMount() {
@@ -50,6 +52,26 @@ class App extends Component {
     }
   }
 
+  signoutUser() {
+    authService.signOut();
+    this.setState({
+      isSignedIn: false,
+      user: {}
+    })
+  }
+
+  async signupUser(credentials) {
+    try {
+      const user = await signup(credentials);
+      this.setState({
+        isSignedIn: true,
+        user
+      })
+    } catch (e) {
+      throw e
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -60,6 +82,7 @@ class App extends Component {
                 {...props}
                 isSignedIn={this.state.isSignedIn}
                 user={this.state.user}
+                signoutUser={this.signoutUser}
               />
             )
           }}/>
@@ -77,11 +100,26 @@ class App extends Component {
               />
             )
           }}/>
-          <Route exact path="/create/user" component={Signup}/>
-          <Route exact path="/create/review" component={CreateReview}/>
+          <Route exact path="/create/user" render={(props) => {
+            return (
+              <Signup
+                {...props}
+                handleSignup={this.signupUser}
+                isSignedIn={this.state.isSignedIn}
+              />
+            )
+          }}/>
+          <ProtectedRoute exact path="/create/review" user={this.state.user} component={CreateReview}/>
           <Route exact path="/user/:id" component={ShowUser}/>
-          <Route exact path="/review/:id" component={ShowReview}/>
-          <Route exact path="/review/:id/edit" component={EditReview}/>
+          <Route exact path="/review/:id" render={(props) => {
+            return (
+              <ShowReview
+                {...props}
+                user={this.state.user}
+              />
+            )
+          }}/>
+          <ProtectedRoute exact path="/review/:id/edit" user={this.state.user} component={EditReview}/>
           <Route exact path="/place/:id" component={ShowPlace}/>
         </Switch>
       </div>

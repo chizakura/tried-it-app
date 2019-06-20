@@ -40,3 +40,19 @@ export const getProfile = async() => {
     throw e
   }
 }
+
+export const signup = async(data) => {
+  try {
+    const response = await api.post('/auth/signup', data)
+    const { data: { user, token } } = response
+
+    console.log(response.data)
+
+    // store token in localStorage
+    // so it can be used on subsequent requests
+    localStorage.setItem('token', token)
+    return user
+  } catch (e) {
+    throw e
+  }
+}

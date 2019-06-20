@@ -31,7 +31,7 @@ class ShowReview extends Component{
             <div>
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>
+                    {(this.props.user.id === this.state.user.id) && <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>}
                 </nav>
                 <h4><Link to={`/user/${this.state.user.id}`}>{this.state.user.name}</Link></h4>
                 <h2><Link to={`/place/${this.state.place.id}`}>{this.state.place.name}</Link></h2>

@@ -1,7 +1,6 @@
 // This page should have a form to create user
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
+import {Link, Redirect} from 'react-router-dom';
 
 class Signup extends Component {
     constructor() {
@@ -27,16 +26,18 @@ class Signup extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await axios.post('http://localhost:4567/user/create', {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-        })
+        const {name, email, password} = this.state;
+        try {
+            await this.props.handleSignup({name, email, password});
+        } catch (err) {
+            this.setState({showError: true})
+        }
     }
 
     render() {
         return (
             <div>
+                {this.props.isSignedIn ? <Redirect to="/"/> : null}
                 <nav>
                     <Link to="/">Home</Link>
                 </nav>
