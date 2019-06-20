@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
+import authService from './services/authService';
 import {login, getProfile} from './services/apiService';
 import ProtectedRoute from './Components/ProtectedRoute';
 import LandingPage from './Components/LandingPage';
