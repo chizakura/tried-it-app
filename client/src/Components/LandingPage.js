@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import SearchBar from './SearchBar';
 import NewsFeed from './NewsFeed';
 
-//This page includes Link to CreateUser
+//This page includes Link to Signup
 //This page should import SearchBAr
 //This page should import NewsFeed
 

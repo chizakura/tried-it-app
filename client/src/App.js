@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import LandingPage from './Components/LandingPage';
-import CreateUser from './Components/CreateUser';
+import Signup from './Components/Signup';
 import CreateReview from './Components/CreateReview';
 import ShowUser from './Components/ShowUser';
 import ShowReview from './Components/ShowReview';
@@ -15,7 +15,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={LandingPage}/>
-          <Route exact path="/create/user" component={CreateUser}/>
+          <Route exact path="/create/user" component={Signup}/>
           <Route exact path="/create/review" component={CreateReview}/>
           <Route exact path="/user/:id" component={ShowUser}/>
           <Route exact path="/review/:id" component={ShowReview}/>

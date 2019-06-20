@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class CreateUser extends Component {
+class Signup extends Component {
     constructor() {
         super();
 
@@ -58,4 +58,4 @@ class CreateUser extends Component {
     }
 }
 
-export default CreateUser;
+export default Signup;
