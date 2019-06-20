@@ -6,22 +6,26 @@ const main = async () => {
     try {
         const user1 = await User.create({
             name: "Fady",
-            email: "fady@fakemail.com"
+            email: "fady@fakemail.com",
+            password: "helloworld"
         })
 
         const user2 = await User.create({
             name: "Linda",
-            email: "linda@fakemail.com"
+            email: "linda@fakemail.com",
+            password: "helloworld"
         })
 
         const user3 = await User.create({
             name: "Shaban",
-            email: "shaban@fakemail.com"
+            email: "shaban@fakemail.com",
+            password: "helloworld"
         })
 
         const user4 = await User.create({
             name: "Dan",
-            email: "dan@fakemail.com"
+            email: "dan@fakemail.com",
+            password: "dantheman"
         })
         
         const review1 = await Review.create({
