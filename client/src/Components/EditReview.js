@@ -129,5 +129,4 @@ class EditReview extends Component {
         )
     }
 }
-
 export default EditReview;
