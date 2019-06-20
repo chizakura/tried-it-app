@@ -1,14 +1,13 @@
-// This page should have a form to create user
+// This page should have a form to login an existing user
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
+import {Link, Redirect} from 'react-router-dom';
+// import axios from 'axios';
 
-class Signup extends Component {
+class Login extends Component {
     constructor() {
         super();
 
         this.state = {
-            name: "",
             email: "",
             password: ""
         }
@@ -27,26 +26,23 @@ class Signup extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await axios.post('http://localhost:4567/user/create', {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-        })
+        const {email, password} = this.state;
+        try {
+            await this.props.handleLogin({email, password});
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     render() {
         return (
             <div>
+                {this.props.isSignedIn ? <Redirect to="/"/> : null}
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/create/review">Add Review</Link>
                 </nav>
-                <h1>Signup Form</h1>
+                <h1>Login</h1>
                 <form className="form" onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>Name</label>
-                        <input name="name" type="text" onChange={this.handleChange} value={this.state.name} required/>
-                    </div>
                     <div>
                         <label>Email</label>
                         <input name="email" type="email" onChange={this.handleChange} value={this.state.email} required/>
@@ -64,4 +60,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default Login;

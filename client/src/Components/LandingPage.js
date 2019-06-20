@@ -12,7 +12,8 @@ class LandingPage extends Component {
         return (
             <div>
                 <nav>
-                    <Link to="/create/user">Add User</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/create/user">Signup</Link>
                 </nav>
                 <div className="home">
                     <h1>Tried It</h1>
