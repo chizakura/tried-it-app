@@ -7,10 +7,28 @@ const initialState = { isLoading: false, results: [], value: "" };
 
 const getResults = () =>
   _.times(5, () => ({
-    title: faker.company.companyName(),
-    description: faker.company.catchPhrase(),
-    image: faker.internet.avatar(),
-    price: faker.finance.amount(0, 100, 2, "$")
+      places: {
+        name:places,
+        results: [
+          {
+            name: "Luigis Pizza",
+            category: "food"
+          },
+          {
+            name: "Abiko Curry",
+              category: "food",
+          },
+          {
+            name: "Rafiqs Halal",
+              category: "food",
+          },
+          {
+            name: "Tandori Hut",
+            category: "food",
+          }
+        ]
+      }
+    
   }));
 
 const source = _.range(0, 3).reduce(memo => {
@@ -29,7 +47,7 @@ export default class SearchExampleCategory extends Component {
   state = initialState;
 
   handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.title });
+    this.setState({ value: result.name });
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });

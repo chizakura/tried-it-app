@@ -1,23 +1,63 @@
+
 .App {
   text-align: center;
 }
+body{
+  /* background-color: rgb(247, 250, 251); */
+  background-color: white;
 
-a {
-  text-decoration: none;
 }
-
+/* user page */
+ul {
+  list-style-type: none;
+  }
+ 
+/* used format from https://freefrontend.com/css-buttons/ */
+nav a {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 50px;
+  width: 120px;
+  background-color: #ffffff;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  color: rgba(22, 76, 167, 1);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  }
 nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  
 }
 
 /* CreateReview and CreateUser */
+input[type=submit]{
+  color: white;
+  border:2px solid;
+  border-color:black;
+  background-color: rgb(144, 185, 161);
+  border-radius:20px;
+  cursor: pointer;
+  width:100px
+}
 .form {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  border: gold 2px solid;
+  margin:50px;
+  padding:50px;
+  background-color:rgb(248, 250, 251);
+  border:5px solid rgba(0, 0, 0, 0.096);
+  border-radius:40px;
   border-radius: 25px;
   padding: 30px;
 }
@@ -30,16 +70,32 @@ nav {
 }
 
 .form input {
-  font-size: 18px;
+background-position:2px;
+border:1px solid #DADADA;
+margin-top:10px;
+margin-bottom:10px;
+width:250px;
+height:30px;
+font-size:14px;
+box-shadow:0 0 10px;
 }
 
 .form textarea {
-  font-size: 18px;
+  background-position:6px;
+border:1px solid #DADADA;
+margin-top:10px;
+margin-bottom:10px;
+padding-left:35px;
+width:250px;
+height:100px;
+font-size:14px;
+box-shadow:0 0 10px;
 }
 
 .date input{
   font-size: 18px;
 }
+
 
 /* LandingPage */
 .home {
@@ -47,37 +103,102 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
 }
-
+img{
+  width: 400px;
+  height:300px;
+}
 /* NewsFeed */
 .news-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: crimson 2px solid;
+  border: white 2px solid;
   margin: 50px;
-  padding: 5px;
+  padding: 20px;
+  border-radius:30px;
+  background-color: #3D9970;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .post {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 200px;
-  overflow: scroll;
+  width: 1200px;
+  height: 400px;
+ justify-content: space-evenly;
+ margin-top: -60px
 }
+  
 
 .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: crimson 1px solid;
+  border-bottom: grey, 1px solid;
+  font-family:  Haettenschweiler, 'Arial Narrow ', sans-serif;
+  font-size: 40px;
+  color: black;
+  font-size: 40px;
 }
-
-.title {
+.top a{
+  color: white;
+  font-size: 80px;
+}
+.post .title {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  /* border-bottom: crimson 1px solid; */
+ margin-left: 320px;
+  font-size: 30px;
+  color: black
+}
+.title a {
+  font-size: 50px;
+  color: white
+}
+.post p { 
+  color: black;
+  font-size: 30px;
+
+}
+
+h1{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(64, 151, 119);
+}
+
+/* User Review Page */
+div ul li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin:50px;
+  padding:50px;
+  height:150px;
+  background-color:rgb(251, 251, 251);
+  border:1px solid;
+  border-radius:40px;
+  border-radius: 25px;
+  padding: 30px;
+  font-size: 40px;
+}
+/* imported font from https://www.cssfontstack.com/Optima */
+.review{
+  background-color: #3D9970;
+ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;  
+}
+.review{
+  font-size: 35px;
+  margin-top: 50px;
+  height:500px;
+  width:700px;
+  margin-left: 530px;
+  border-radius: 20px;
+}
+.review a{
+  color: white; 
+  font-size: 32px;
+}
+.review p {
+  font-size: 30px;
 }

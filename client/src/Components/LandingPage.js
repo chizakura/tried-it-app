@@ -15,7 +15,7 @@ class LandingPage extends Component {
                     <Link to="/create/user">Add User</Link>
                 </nav>
                 <div className="home">
-                    <h1>Tried It</h1>
+                    <img src="https://www.freelogodesign.org/file/app/client/thumb/d251db0b-bb9d-40ef-a816-ff7d0546ed18_200x200.png?1561053710185"/>
                     <SearchBar/>
                     <NewsFeed/>
                 </div>
