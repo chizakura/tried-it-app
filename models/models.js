@@ -1,6 +1,10 @@
 const Sequelize = require("sequelize")
 const bcrypt = require('bcrypt');
-const BCRYPT_SALT_ROUNDS = 12;
+const dotenv = require('dotenv');
+const buf = Buffer.from(`SALT_KEY=${process.env.BCRYPT_SALT_ROUNDS_NUM}`);
+const config = dotenv.parse(buf);
+
+const BCRYPT_SALT_ROUNDS = parseInt(config.SALT_KEY);
 
 const db = new Sequelize({
     database: "tried_it_db",
