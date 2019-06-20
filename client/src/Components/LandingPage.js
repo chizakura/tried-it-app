@@ -10,14 +10,16 @@ import NewsFeed from './NewsFeedUI';
 class LandingPage extends Component {
     render() {
         return (
-            <div>
-                <nav>
-                    <Link to="/create/user">Add User</Link>
-                </nav>
-                <div className="home">
-                    <h1>Tried It</h1>
-                    <SearchBar/>
-                    <NewsFeed/>
+            <div className="inside-app">
+                <div className="before-home">
+                    <nav>
+                        <Link to="/create/user">Add User</Link>
+                    </nav>
+                    <div className="home">
+                        <h1>Tried It</h1>
+                        <SearchBar/>
+                        <NewsFeed/>
+                    </div>
                 </div>
             </div>
         )
