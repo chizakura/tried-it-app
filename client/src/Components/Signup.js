@@ -30,14 +30,16 @@ class Signup extends Component {
         try {
             await this.props.handleSignup({name, email, password});
         } catch (err) {
-            this.setState({showError: true})
+            throw err
         }
     }
 
     render() {
+        if (this.props.isSignedIn) {
+            return <Redirect to="/"/>
+        }
         return (
             <div>
-                {this.props.isSignedIn ? <Redirect to="/"/> : null}
                 <nav>
                     <Link to="/">Home</Link>
                 </nav>
