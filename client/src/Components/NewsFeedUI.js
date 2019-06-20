@@ -3,17 +3,14 @@ import { Feed } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-class FeedExampleSummaryDate extends Component {
+class NewsFeed extends Component {
     constructor(props){
         super(props)
         this.state ={
-            reviewsArray: [],
-            // place: {},
-            // user: {}
+            reviewsArray: []
         }
         this.setIcon = this.setIcon.bind(this)
     }
-
 
     async componentDidMount (){
         let reviewsArray = []
@@ -24,13 +21,9 @@ class FeedExampleSummaryDate extends Component {
         let index2 = reviews.length -2;
         let index3 = reviews.length -3;
         reviewsArray.push(reviews[index1], reviews[index2], reviews[index3])
-        // const place = reviews.place
-        // const user = reviews.user
         
         this.setState({
-            reviewsArray,
-            // place,
-            // user
+            reviewsArray
         })
     }
 
@@ -68,7 +61,6 @@ class FeedExampleSummaryDate extends Component {
                     <Feed.Content>
                         <Feed.Summary>
                             <span className='material-icons'>{this.setIcon(review.place.category)}</span>
-                            {/* <em><Feed.Date>3 days ago</Feed.Date></em> */}
                             <span>
                                 <Link to={`/user/${review.user.id}`}>{review.user.name}</Link> Tried 
                                 <Link to={`/place/${review.place.id}`}>  {review.place.name}   </Link>
@@ -86,7 +78,7 @@ class FeedExampleSummaryDate extends Component {
 }
 
 
-export default FeedExampleSummaryDate
+export default NewsFeed
 
 
 
