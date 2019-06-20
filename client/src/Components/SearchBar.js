@@ -1,46 +1,58 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class SearchBar extends Component {
     constructor(){
         super();
-
         this.state = {
             searchTerm: "",
             placesList: [],
-            usersList: [],
-            searchList: []
+            usersList: []
         }
-
         this.handleSearch = this.handleSearch.bind(this);
     }
 
-    async componentDidMount() {
-        // const places = await axios.get(`http://localhost:4567/place/findByName/lu`);
-        // console.log(places)
-        // this.setState({
-            // placesList: places.data.places
-        // })
-    }
-
     async handleSearch(event) {
-        let name = event.target.name;
-        let value = event.target.value;
-        const places = await axios.get(`/place/findByName/${value}`);
-        console.log(places)
-        // let searchList = this.state.placesList.filter(place => {
-        //     return place.name.includes(value);
-        // })
-        this.setState({
-            [name]: value,
-            searchList: places
-        })
+        if (event.target.value) {
+            let name = event.target.name;
+            let value = event.target.value;
+            const places = await axios.get(`/place/findByName/${value}`)
+            const users = await axios.get(`/user/findByName/${value}`);
+     
+            this.setState({
+                [name]: value,
+                placesList: places.data.place,
+                usersList: users.data.user
+            })
+        }else{
+            let name = event.target.name;
+            let value = event.target.value;
+
+            this.setState({
+                [name]: value,
+                placesList: [],
+                usersList: []
+            })
+        }
+ 
     }
 
     render() {
+        let results
+        if (this.state.searchTerm ) {
+            results = <div className='results'>
+                <ul>
+                    {this.state.placesList.map( place => <li><Link to={`/place/${place.id}`}>{place.name}</Link></li>)}
+                    <hr />
+                    {this.state.usersList.map( user => <li><Link to={`/user/${user.id}`}>{user.name}</Link></li>)}
+                </ul>
+            </div>
+        }
         return (
             <form onChange={this.handleSearch}>
                 <input 
+                    autoComplete="off"
                     name='searchTerm'
                     type='text'
                     list="ice-cream-flavors"
@@ -48,19 +60,9 @@ class SearchBar extends Component {
                     value={this.state.searchTerm}
                     onChange={function(){}}
                 />
-                {/* <datalist id="ice-cream-flavors">
-                    <optgroup label="places">
-                        <option value="Chocolate">Chocolate</option>
-                        <option value="mms" />
-                        <option value="rockyroad" />
-                    </optgroup>
-                    <option value="icecream" />
-                    <option value="sugarrush" />
-                    <option value="musketeers" />
-                </datalist> */}
+                {results}
             </form>
         )
     }
 }
-
 export default SearchBar;
