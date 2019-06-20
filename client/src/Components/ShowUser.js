@@ -31,7 +31,6 @@ class ShowUser extends Component{
     }
 
     render(){
-        console.log(this.state.places)
         return (
             <div className="App">
                 <h1>{this.state.user.name}</h1>
