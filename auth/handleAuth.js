@@ -2,6 +2,15 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const {User} = require('../models/models');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+const buf = Buffer.from(`TOKEN_KEY=${process.env}`)
+const config = dotenv.parse(buf)
+
+const SECRET = config.TOKEN_KEY;
+const jwtSign = (payload) => {
+    return jwt.sign(payload, SECRET)
+}
 
 passport.use('login', new LocalStrategy({
     usernameField: 'email',
@@ -39,5 +48,6 @@ passport.use('login', new LocalStrategy({
 ))
 
 module.exports = {
-    passport
+    passport,
+    jwtSign
 }
