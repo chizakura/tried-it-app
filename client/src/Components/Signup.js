@@ -39,7 +39,6 @@ class Signup extends Component {
             <div>
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/create/review">Add Review</Link>
                 </nav>
                 <h1>Signup Form</h1>
                 <form className="form" onSubmit={this.handleSubmit}>

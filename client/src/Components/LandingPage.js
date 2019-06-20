@@ -9,11 +9,14 @@ import NewsFeed from './NewsFeed';
 
 class LandingPage extends Component {
     render() {
+        const name = (this.props.user.name !== undefined) ? this.props.user.name : "";
+        console.log(`Welcome back ${name}`);
         return (
             <div>
                 <nav>
-                    <Link to="/login">Login</Link>
-                    <Link to="/create/user">Signup</Link>
+                    {!this.props.isSignedIn && <Link to="/login">Login</Link>}
+                    {!this.props.isSignedIn && <Link to="/create/user">Signup</Link>}
+                    {this.props.isSignedIn && <Link to="/create/review">Create a Review</Link>}
                 </nav>
                 <div className="home">
                     <h1>Tried It</h1>
