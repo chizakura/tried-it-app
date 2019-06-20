@@ -8,8 +8,9 @@
     "init": "dropdb --if-exists tried_it_db && createdb tried_it_db",
     "reset": "node ./scripts/resetDb.js",
     "seed": "node ./scripts/seedDb.js",
-    "dev": "nodemon server.js",
-    "client": "cd client && npm start"
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+      "client": "cd client && npm start",
+      "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
   },
   "repository": {
     "type": "git",
