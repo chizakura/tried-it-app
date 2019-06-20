@@ -29,10 +29,14 @@ placeRouter.get('/findPlacesWithIdsArray/:id', async (req, res) => {
 })
 // find places by name and return a list of places that are similar to the name
 placeRouter.get('/findByName/:name', async (req, res) => {
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    const searchTerm = req.params.name
     const place = await Place.findAll({
         where: {
             name: {
-                [Op.like]: `%${req.params.name}%`
+                [Op.or]: [ {[Op.like]: `%${capitalizeFirstLetter(searchTerm)}%`} , {[Op.like]: `%${searchTerm}%`} ]
             }
         }
     })
