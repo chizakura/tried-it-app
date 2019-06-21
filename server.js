@@ -9,7 +9,6 @@ const {appRouter} = require('./routes/app');
 const {authorized} = require('./auth/handleAuth');
 const cors = require('cors');
 const passport = require('passport');
-const PORT = process.env.PORT || 4567
 const path = require('path')
 
 app.use(cors())
@@ -18,12 +17,14 @@ app.use(bodyParser.urlencoded({
   }));
 app.use(bodyParser.json())
 
+// Static hosting for built files
+app.use(express.static(path.join(__dirname, './client/build')));
+
 app.use((err, req, res, next)=>{
     res.status(err.status || 500)
     res.json({ message: err.message })
 })
 
-app.get('/', (req, res) => res.send('TriedIt'))
 app.use('/user',userRouter)
 app.use('/review',reviewRouter)
 app.use('/place',placeRouter)
@@ -31,8 +32,9 @@ app.use('/auth', authRouter)
 app.use('/app', authorized, appRouter)
 app.use(passport.initialize());
 
-// Static hosting for built files
-app.use(express.static(path.join(__dirname, './client/build')));
+const PORT = process.env.PORT || 4567
+
+app.get('/', (req, res) => res.send('TriedIt'))
 
 // In production, any request that doesn't match a previous route
 // should send the front-end application, which will handle the route.
