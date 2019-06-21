@@ -150,8 +150,8 @@ Linda-
  
  #### SAMPLE.....
 | Original Plan | Outcome | 
-| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything done the way the team anticipated. |  
-| Adding friends | Ultimately we decided to stick with just authroization. Adding friends would require more time and it would get to complicated |  
+| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything done the way the team anticipated |  
+| Adding friends | Ultimately we decided to stick with just authroization Adding friends would require more time and it would get to complicated |  
 
 
 ## Issues and Resolutions
