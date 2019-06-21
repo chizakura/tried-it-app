@@ -114,6 +114,7 @@ Helper functions should be generic enough that they can be reused in other appli
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.
+Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format for the buttons from https://freefrontend.com/css-buttons/ and for the forms from https://freefrontend.com/css-forms/.
 
  ```js
 .form input, .form textarea {
@@ -143,17 +144,14 @@ Use this section to include a brief code snippet of functionality that you are p
     letter-spacing: 1px;
 }
 ```
-Fady-
-Linda-
- Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format from https://freefrontend.com/css-buttons/.
+
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
  
-| Original plan | Outcome |
+| Original Plan | Outcome | 
 | --- | :---: |  
-| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything  the way the team anticipated |  
-| Adding friends | Ultimately we decided to stick with just authroization Adding friends would require more time and it would get to complicated |  
-
+| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything  the way the team anticipated | 
+| Adding friends | Ultimately we decided to stick with just authroization Adding friends would require more time and it would get to complicated | 
 
 ## Issues and Resolutions
 When editing the review the date was showing up with the exact time the review was created with the minutes and seconds. We used  entryDate.toLocaleString to format the date to get it in mm-dd-yyyy format.
