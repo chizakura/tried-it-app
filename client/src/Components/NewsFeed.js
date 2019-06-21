@@ -15,7 +15,7 @@ class NewsFeed extends Component {
     }
 
     async componentDidMount (){
-        const res = await axios.get(`http://localhost:4567/review`)
+        const res = await axios.get(`/review`)
         const reviews = res.data.reviews;
         let index = Math.floor(Math.random()*(reviews.length));
         const review = reviews[index];

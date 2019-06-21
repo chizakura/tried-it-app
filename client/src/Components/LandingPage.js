@@ -15,7 +15,10 @@ class LandingPage extends Component {
             <div className="inside-app">
                 <div className="before-home">
                     <nav>
-                        <Link to="/create/user">Add User</Link>
+                        {!this.props.isSignedIn && <Link to="/login">Login</Link>}
+                        {!this.props.isSignedIn && <Link to="/create/user">Signup</Link>}
+                        {this.props.isSignedIn && <Link to="/create/review">Create a Review</Link>}
+                        {this.props.isSignedIn && <Link onClick={this.props.signoutUser}>Signout</Link>}
                     </nav>
                     <div className="home">
                         <h1>Tried It ?</h1>
