@@ -16,7 +16,7 @@
 
 **Tried It** is an application that allows the user to see reviews for places based on where their friends have visited. Often times individuals trust their friends' opinions more than anyone else's. This application will allow the user to add an account to the database as well as add reviews to different places. Additionally, the user may search for other friends in the database to see what places they tried and their review of it. Also, the user may search for a specific place and see which friends have "tried it" and see their reviews.
 
-- [Tried It](Link to app here)
+- [Tried It](https://tried-it-project-3.herokuapp.com/)
 
 ## Wireframes
 
