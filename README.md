@@ -99,6 +99,7 @@ Helper functions should be generic enough that they can be reused in other appli
 | if statement in Render | Once a review is updated it takes you back to the the page you edited and when you delete a reiew it takes you back to the home page. | 
 | User.beforeCreate | This function helps encrypt a password when creating a user. |  
 |  entryDate.toLocaleString | This helped format the time | 
+| adding Auth | Setup authorization for a user to sign up |
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -147,6 +148,7 @@ Linda-
  Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format from https://freefrontend.com/css-buttons/.
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
+ 
 | Original plan | Outcome |
 | --- | :---: |  
 | Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything  the way the team anticipated |  
@@ -154,4 +156,4 @@ Linda-
 
 
 ## Issues and Resolutions
- The Date was showing up with the exact time the review was created with the minutes and seconds. We used  entryDate.toLocaleString to format the date to get it how we wanted.
+When editing the review the date was showing up with the exact time the review was created with the minutes and seconds. We used  entryDate.toLocaleString to format the date to get it in mm-dd-yyyy format.
