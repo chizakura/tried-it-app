@@ -96,9 +96,9 @@ Helper functions should be generic enough that they can be reused in other appli
 .
 | Function | Description | 
 | --- | :---: |  
-| if statement in Render| Once a review is updated it takes you back to the the page you edited and when you delete a reiew it takes you back to the home page. | 
+| if statement in Render | Once a review is updated it takes you back to the the page you edited and when you delete a reiew it takes you back to the home page. | 
 | User.beforeCreate | This function helps encrypt a password. |  
-|  entryDate.toLocaleString| This helped formatting the time | 
+|  entryDate.toLocaleString | This helped formatting the time | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -149,8 +149,8 @@ Linda-
  Use this section to document what changes were made and the reasoning behind those changes.
  
 | Original Plan | Outcome | 
-| Adding Likes and Comments |Did not add because it woudl get to complicated and there was not enough time to have everything done the way the team anticipated.|  
-| Adding friends |Ultimately we decided to stick with just authroization. Adding friends would require more time and it would get to complicated|  
+| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything done the way the team anticipated. |  
+| Adding friends |Ultimately we decided to stick with just authroization. Adding friends would require more time and it would get to complicated |  
 
 
 ## Issues and Resolutions
