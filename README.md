@@ -93,7 +93,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
-.
+
 | Function | Description | 
 | --- | :---: |  
 | if statement in Render | Once a review is updated it takes you back to the the page you edited and when you delete a reiew it takes you back to the home page. | 
@@ -148,6 +148,7 @@ Linda-
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.
  
+ #### SAMPLE.....
 | Original Plan | Outcome | 
 | Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything done the way the team anticipated. |  
 | Adding friends |Ultimately we decided to stick with just authroization. Adding friends would require more time and it would get to complicated |  
