@@ -13,7 +13,9 @@ class EditReview extends Component {
             date: "",
             rating: "",
             entry: "",
-            redirect: false
+            redirectOnUpdate: false,
+            redirectOnDelete: false,
+            userId: this.props.user.id
 
         }
 
@@ -22,12 +24,13 @@ class EditReview extends Component {
         this.changeDate = this.changeDate.bind(this);
         this.changeRating = this.changeRating.bind(this);
         this.changeEntry = this.changeEntry.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     async componentDidMount() {
         const res = await axios.get(`/review/${this.props.match.params.id}`);
         const reviews = res.data.review;
-        const entryDate = new Date(reviews.date)
+        const entryDate = new Date(reviews.date);
 
         this.setState({
             reviews: reviews,
@@ -67,14 +70,29 @@ class EditReview extends Component {
             entry: this.state.entry
         })
         this.setState({
-            redirect: true
+            redirectOnUpdate: true
+        })
+    }
+
+    async handleDelete() {
+        await axios.delete(`/review/${this.props.match.params.id}`);
+        this.setState({
+            redirectOnDelete: true
         })
     }
 
     render() {
+        // console.log(this.props.user.id)
+        // console.log(this.state.reviews.userId)
+        if (this.state.redirectOnUpdate) {
+            return <Redirect to={`/review/${this.props.match.params.id}`}/>
+        } else if(this.state.redirectOnDelete) {
+            return <Redirect to="/"/>
+        }
         return (
             <div>
                 {this.state.redirect ? <Redirect to={`/review/${this.props.match.params.id}`} /> : null}
+                {/* {(this.props.user.id !== this.state.reviews.userId) ? <Redirect to={`/review/${this.props.match.params.id}`}/> : null} */}
                 <nav>
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}`}>Back</Link>
@@ -113,13 +131,11 @@ class EditReview extends Component {
                             onChange={this.changeEntry}
                         />
                     </div>
-                    <div>
-                        <input
-                            type="submit"
-                            value="submit"
-                        />
-                    </div>
+                    <input type="submit" value="submit"/>
                 </form>
+                <div className="delete">
+                    <input type="button" value="Delete Review" onClick={this.handleDelete}/>
+                </div>
             </div>
         )
     }

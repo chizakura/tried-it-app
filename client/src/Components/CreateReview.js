@@ -8,13 +8,11 @@ class CreateReview extends Component {
         super();
 
         this.state = {
-            userId: "",
             placeId: "",
             date: "",
             title: "",
             rating: "",
             entry: "",
-            userList: [],
             placeList: [],
             redirect: false
         }
@@ -25,9 +23,7 @@ class CreateReview extends Component {
 
     async componentDidMount() {
         const resPlace = await axios.get('/place');
-        const resUser = await axios.get('/user');
         this.setState({
-            userList: resUser.data.users,
             placeList: resPlace.data.places
         })
     }
@@ -47,7 +43,7 @@ class CreateReview extends Component {
             date: this.state.date,
             rating: this.state.rating,
             entry: this.state.entry,
-            userId: this.state.userId,
+            userId: this.props.user.id,
             placeId: this.state.placeId
         })
         this.setState({
@@ -56,25 +52,15 @@ class CreateReview extends Component {
     }
 
     render() {
+        console.log(this.props.user.id)
         return (
             <div>
                 {this.state.redirect ? <Redirect to="/"/> : null}
                 <nav>
                     <Link to="/">Home</Link>
                 </nav>
-                <h1>Add Review Form</h1>
+                <h1>Create a Review</h1>
                 <form className="form" onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>Who is writing this review:</label>
-                        <input name="userId" list="user-list" onChange={this.handleChange} required/>
-                        <datalist id="user-list">
-                            {this.state.userList.map(user => {
-                                return (
-                                    <option key={user.id} value={user.id}>{user.name}</option>
-                                )
-                            })}
-                        </datalist>
-                    </div>
                     <div>
                         <label>Choose a place:</label>
                         <input name="placeId" list="place-list" onChange={this.handleChange} required/>

@@ -14,9 +14,9 @@ class ShowPlace extends Component{
     }
 
     async componentDidMount(){
-        const response = await axios.get(`/place/${this.props.match.params.id}`);
+        const response = await axios.get(`http://localhost:4567/place/${this.props.match.params.id}`);
         const place = response.data.place;
-        const usersIdResponse = await axios.get(`/review/findPlaceUsers/${this.props.match.params.id}`);
+        const usersIdResponse = await axios.get(`http://localhost:4567/review/findPlaceUsers/${this.props.match.params.id}`);
         let usersList = usersIdResponse.data.reviews;
 
         this.setState({

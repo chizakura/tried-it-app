@@ -16,7 +16,7 @@ class ShowReview extends Component{
     }
 
     async componentDidMount(){
-        const res = await axios.get(`/review/${this.props.match.params.id}`)
+        const res = await axios.get(`http://localhost:4567/review/${this.props.match.params.id}`)
         
         this.setState({
             review: res.data.review,
@@ -31,7 +31,7 @@ class ShowReview extends Component{
             <div>
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>
+                    {(this.props.user.id === this.state.user.id) && <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>}
                 </nav>
                 <div className="review">
                 <h4><Link to={`/user/${this.state.user.id}`}>{this.state.user.name}</Link></h4>
