@@ -6,15 +6,15 @@ const config = dotenv.parse(buf);
 
 const BCRYPT_SALT_ROUNDS = parseInt(config.SALT_KEY);
 
-// const db = new Sequelize({
-//     database: "tried_it_db",
-//     dialect: "postgres",
-//     define: {underscored: true}
-// })
+const db = new Sequelize({
+    database: "tried_it_db",
+    dialect: "postgres",
+    define: {underscored: true}
+})
 
-const db = new Sequelize(process.env.DATABASE_URL , {
-    dialect: 'postgres'
-});
+// const db = new Sequelize(process.env.DATABASE_URL , {
+//     dialect: 'postgres'
+// });
 
 const User = db.define('user', {
     name: {
@@ -55,12 +55,6 @@ const Review = db.define('review', {
         type: Sequelize.TEXT,
         allowNull: false
     }
-    // likes: {
-    //     type: Sequelize.INTEGER
-    // }
-    // comments: {
-    //     type: Sequelize.TEXT
-    // }
 })
 
 const Place = db.define('place', {
@@ -83,12 +77,6 @@ const Place = db.define('place', {
         type: Sequelize.STRING,
         allowNull: false 
     }
-    // favorite: {
-    //     type: Sequelize.INTEGER
-    // }
-    // image: {
-    //     type: Sequelize.TEXT
-    // }
 })
 
 User.hasMany(Review)

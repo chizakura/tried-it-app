@@ -28,7 +28,7 @@ reviewRouter.get('/:id', async (req, res) => {
 reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
     const reviews = await Review.findAll({
         where: {
-            user_id : req.params.id
+            userId : req.params.id
         },
         include: [Place]
     })
@@ -40,7 +40,7 @@ reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
 reviewRouter.get('/findPlaceUsers/:id', async (req, res) => {
     const reviews = await Review.findAll({
         where: {
-            place_id : req.params.id
+            placeId : req.params.id
         },
         include: [User]
     })
