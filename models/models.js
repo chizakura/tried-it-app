@@ -1,4 +1,10 @@
 const Sequelize = require("sequelize")
+const bcrypt = require('bcrypt');
+const dotenv = require('dotenv');
+const buf = Buffer.from(`SALT_KEY=${process.env.BCRYPT_SALT_ROUNDS_NUM}`);
+const config = dotenv.parse(buf);
+
+const BCRYPT_SALT_ROUNDS = parseInt(config.SALT_KEY);
 
 const db = new Sequelize({
     database: "tried_it_db",
@@ -14,11 +20,17 @@ const User = db.define('user', {
     email: {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
-    // password: {
-    //     type: Sequelize.TEXT,
-    //     allowNull: false
-    // }
+})
+
+User.beforeCreate(async (user, options) => {
+    const hashedPassword = await bcrypt.hash(user.password, BCRYPT_SALT_ROUNDS);
+    
+    user.password = hashedPassword;
 })
 
 const Review = db.define('review', {
