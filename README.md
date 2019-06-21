@@ -97,8 +97,8 @@ Helper functions should be generic enough that they can be reused in other appli
 | Function | Description | 
 | --- | :---: |  
 | if statement in Render | Once a review is updated it takes you back to the the page you edited and when you delete a reiew it takes you back to the home page. | 
-| User.beforeCreate | This function helps encrypt a password. |  
-|  entryDate.toLocaleString | This helped formatting the time | 
+| User.beforeCreate | This function helps encrypt a password when creating a user. |  
+|  entryDate.toLocaleString | This helped format the time | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -146,11 +146,10 @@ Fady-
 Linda-
  Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format from https://freefrontend.com/css-buttons/.
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.
- 
- #### SAMPLE.....
-| Original Plan | Outcome | 
-| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything done the way the team anticipated |  
+ Use this section to document what changes were made and the reasoning behind those changes.  
+| Original Plan | Outcome |
+| --- | :---: |  
+| Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything  the way the team anticipated |  
 | Adding friends | Ultimately we decided to stick with just authroization Adding friends would require more time and it would get to complicated |  
 
 
