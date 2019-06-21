@@ -114,6 +114,7 @@ Helper functions should be generic enough that they can be reused in other appli
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.
 
+ ```js
 .form input, .form textarea {
     border: 1px solid #dadada;
     margin-top: 10px;
@@ -140,6 +141,7 @@ Use this section to include a brief code snippet of functionality that you are p
     font-weight: 800;
     letter-spacing: 1px;
 }
+```
 Fady-
 Linda-
  Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format from https://freefrontend.com/css-buttons/.
