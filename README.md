@@ -6,10 +6,10 @@
 |---|---| ---|
 |6/17| Project Description | Complete
 |6/17| Wireframes / Priority Matrix / Functional Components | Complete
-|6/18| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|6/18| Pseudocode / actual code | Incomplete
-|6/18| Initial Clickable Model | Incomplete
-|6/19| MVP | Incomplete
+|6/18| Core Application Structure (HTML, CSS, etc.) | Complete
+|6/18| Pseudocode / actual code | Complete
+|6/18| Initial Clickable Model | Complete
+|6/19| MVP | Complete
 |6/21| Present | Incomplete
 
 ## Project Description
@@ -81,55 +81,75 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Landing Page showing News feed | H | 5hrs|  |
-| Setting up a user to register an account | H | 3hrs|  |
-| Adding Reviews | H | 2hrs|  |
-| Adding Places | H | 2hrs|  |
-| Being able to search the database | H | 2hrs|  |
-| Styling | M | 4hrs|  |
-| Adding a friend| L | 4hrs|  |
-| Authorization | L | 6hrs|  |
-| Total |  | 28 hrs| hrs |
+| Landing Page showing News feed | H | 5hrs| 4hrs |
+| Setting up a user to register an account | H | 3hrs| 3hrs  |
+| Adding Reviews | H | 2hrs| 3hrs |
+| Adding Places | H | 2hrs| 2hrs |
+| Being able to search the database | H | 2hrs| 4hrs |
+| Styling | M | 4hrs| 6hrs |
+| Adding a friend| L | 4hrs| 0hrs |
+| Authorization | L | 6hrs| 4hrs |
+| Total |  | 28 hrs| 26hrs |
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
-
-#### SAMPLE.....
+.
 | Function | Description | 
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string of text | 
+| if statement in Render| Once a review is updated it takes you back to the the page you edited and when you delete a reiew it takes you back to the home page. | 
+| User.beforeCreate | This function helps encrypt a password. |  
+|  entryDate.toLocaleString| This helped formatting the time | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
- 
- #### SAMPLE.....
+
 | Library | What it Does | 
 | --- | :---: |  
-| Bootstrap | Used to help style my application | 
-| Giphy API | Used to get gifs to use | 
+| Bootstrap | Used to help style my application. | 
+| semantic-ui-css | Used to get animations for searchbar. | 
+| Sequelize| Makes it easy to work with database. | 
+| glob| Needed it to use semantic-ui | 
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.
 
-#### SAMPLE.....
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
+.form input, .form textarea {
+    border: 1px solid #dadada;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    }
+    nav a {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 50px;
+    width: 120px;
+    background-color: #fff;
+    border: 1px solid rgba(22,76,167,.6);
+    color: #164ca7;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
-```
-
+Fady-
+Linda-
+ Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format from https://freefrontend.com/css-buttons/.
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.
-
-#### SAMPLE.....
+ 
 | Original Plan | Outcome | 
-| --- | --- |  
-| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
+| Adding Likes and Comments |Did not add because it woudl get to complicated and there was not enough time to have everything done the way the team anticipated.|  
+| Adding friends |Ultimately we decided to stick with just authroization. Adding friends would require more time and it would get to complicated|  
+
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+ The Date was showing up with the exact time the review was created with the minutes and seconds. We used  entryDate.toLocaleString to format the date to get it how we wanted.
