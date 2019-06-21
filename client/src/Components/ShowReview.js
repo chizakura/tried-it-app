@@ -28,7 +28,7 @@ class ShowReview extends Component{
     render() {
         const entryDate = new Date(this.state.review.date);
         return (
-            <div>
+            <div className="outer-review">
                 <nav>
                     <Link to="/">Home</Link>
                     {(this.props.user.id === this.state.user.id) && <Link to={`/review/${this.props.match.params.id}/edit`}>Edit</Link>}

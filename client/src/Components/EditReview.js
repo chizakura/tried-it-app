@@ -90,7 +90,7 @@ class EditReview extends Component {
             return <Redirect to="/"/>
         }
         return (
-            <div>
+            <div className='inside-app'>
                 {this.state.redirect ? <Redirect to={`/review/${this.props.match.params.id}`} /> : null}
                 {/* {(this.props.user.id !== this.state.reviews.userId) ? <Redirect to={`/review/${this.props.match.params.id}`}/> : null} */}
                 <nav>

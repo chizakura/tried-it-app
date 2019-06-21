@@ -21,9 +21,6 @@ class ShowUser extends Component{
         const user = response.data.user;
         const placesIdResponse = await axios.get(`http://localhost:4567/review/findUserPlaces/${this.props.match.params.id}`);
         let reviewsList = placesIdResponse.data.reviews;
-        // placesIdResponse.data.reviews.forEach(review  => {
-        //     placesIds.push(review.place)            
-        // });
         
         this.setState({
             user,
@@ -33,24 +30,25 @@ class ShowUser extends Component{
 
     render(){
         return (
-            <div>
-            <div className="user-info">
-                <h1>{this.state.user.name}</h1>
-                <h4>{this.state.user.email}</h4>
+            <div className='inside-app'>
+                <nav>
+                    <Link to="/">Home</Link>
+                </nav>
+                <div className="user-info">
+                    <h1>{this.state.user.name}</h1>
+                    <h4>{this.state.user.email}</h4>
+                    </div>
+                <div className="user-reviews">
+                        {this.state.reviewsList.map(review => {
+                            return (
+                            <div className="review-box"
+                                key={review.id}>
+                                <p><b><Link to={`/review/${review.id}`}>{review.place.name}</Link></b> - {review.place.category}</p>
+                                <p>{review.title}</p>
+                            </div>
+                            )
+                        })}
                 </div>
-            <div className="user-reviews">
-                    {this.state.reviewsList.map(review => {
-                        // const entryDate = new Date(review.date);
-                        return (
-                          <div className="review-box"
-                             key={review.id}>
-                            <p><b><Link to={`/review/${review.id}`}>{review.place.name}</Link></b> - {review.place.category}</p>
-                            <p>{review.title}</p>
-                            {/* <p>{review.entry} - {entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})}</p> */}
-                          </div>
-                        )
-                    })}
-            </div>
             </div>
         )
     }

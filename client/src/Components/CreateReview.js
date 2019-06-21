@@ -54,7 +54,7 @@ class CreateReview extends Component {
     render() {
         console.log(this.props.user.id)
         return (
-            <div>
+            <div className='inside-app'>
                 {this.state.redirect ? <Redirect to="/"/> : null}
                 <nav>
                     <Link to="/">Home</Link>

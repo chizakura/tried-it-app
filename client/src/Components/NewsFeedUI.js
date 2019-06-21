@@ -50,7 +50,6 @@ class NewsFeed extends Component {
         return icon
     }
 
-
     render(){
         const { reviewsArray } = this.state
         return (
@@ -59,8 +58,8 @@ class NewsFeed extends Component {
             <div key={key}>
                 <Feed.Event> 
                     <Feed.Content>
-                        <Feed.Summary>
-                            <span className='material-icons'>{this.setIcon(review.place.category)}</span>
+                        <Feed.Summary className='feed-item'>
+                            <span className='material-icons icon'>{this.setIcon(review.place.category)}</span>
                             <span>
                                 <Link to={`/user/${review.user.id}`}>{review.user.name}</Link> Tried 
                                 <Link to={`/place/${review.place.id}`}>  {review.place.name}   </Link>
@@ -76,7 +75,6 @@ class NewsFeed extends Component {
         )
     }
 }
-
 
 export default NewsFeed
 

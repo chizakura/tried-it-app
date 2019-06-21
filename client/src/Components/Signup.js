@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 
 class Signup extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             name: "",
@@ -39,7 +39,7 @@ class Signup extends Component {
             return <Redirect to="/"/>
         }
         return (
-            <div>
+            <div className='inside-app'>
                 <nav>
                     <Link to="/">Home</Link>
                 </nav>
