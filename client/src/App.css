@@ -1,22 +1,16 @@
-<<<<<<< HEAD
-#root {
+body, html, #root {
   height: 100%
 }
 
 .App {
   text-align: center;
   height: 100%
-
-=======
-
-.App {
-  text-align: center;
-  font-size: 20px;
->>>>>>> ccd0ddf45dc234405ac7d1cd38b031ad8cb36626
 }
+
 .App p{
   font-size: 20px;
 }
+
 .place-review{
   display: flex
 }
@@ -27,8 +21,8 @@ body{
 p{
   font-size: 20px;
 }
-/* user page */
- 
+
+/* user page */ 
 /* used format from https://freefrontend.com/css-buttons/ */
 nav a {
   position: relative;
@@ -49,24 +43,24 @@ nav a {
   font-weight: 800;
   letter-spacing: 1px;
   }
+
 nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-<<<<<<< HEAD
   background-color: #EBFCFB;
 }
 
 .inside-app {
   height: 100%;
-  /* width: 800px; */
 
-  background-image: url('./postits.jpg');
+  background-image: url('./skyline.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-=======
->>>>>>> ccd0ddf45dc234405ac7d1cd38b031ad8cb36626
-  
+}
+
+.input-field{
+  size: 3rem;
 }
 
 /* CreateReview and CreateUser */
@@ -125,33 +119,31 @@ box-shadow:0 0 10px;
 }
 
 .date input{
-  font-size: 18px;
+  font-size: 14px;
 }
 .before-home{
   display: flex;
   flex-direction: column;
   align-content: center;
   align-self: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 
 /* LandingPage */
 .home {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
+  height: 300px;
+  width: 100%;
+  margin: 100px;
+  display: grid;
   align-content: center;
   align-self: center;
   justify-content: center;
-<<<<<<< HEAD
-  margin-bottom: 70px;
-=======
-  font-size: 30px;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 200px;
 }
 .ui.feed *{
   margin: 5% auto;
->>>>>>> ccd0ddf45dc234405ac7d1cd38b031ad8cb36626
 }
 
 /* NewsFeed */
@@ -183,9 +175,7 @@ box-shadow:0 0 10px;
 .post .title {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   justify-content: space-around;
-  /* border-bottom: crimson 1px solid; */
 }
 
 select {
@@ -193,7 +183,6 @@ select {
 }
 
 .results{
-  background-color: white;
   z-index: 2;
 }
 
@@ -246,11 +235,7 @@ li{
     opacity: 1;
   }
 }
-=======
- margin-left: 320px;
-  font-size: 30px;
-  color: black
-}
+
 .title a {
   font-size: 50px;
   color: white
@@ -258,7 +243,6 @@ li{
 .post p { 
   color: black;
   font-size: 30px;
-
 }
 
 h1{
@@ -268,9 +252,15 @@ h1{
 
 /* User Review Page */
 
-
+.outer-review{
+  height: 100%;
+  background-image: url('./skyline.jpg');
+  background-size: 100%;
+  background-repeat: repeat;
+  /* background-position-y: 30%; */
+}
 .review{
-  background-color: #3D9970;
+  background-color: #CEDFD9;
  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;  
 }
 .review{
@@ -278,7 +268,7 @@ h1{
   margin-top: 50px;
   height:500px;
   width:700px;
-  margin-left: 530px;
+  margin-left: 350px;
   border-radius: 20px;
   padding:7px;
 }
@@ -292,10 +282,10 @@ h1{
 }
 
 .review-box{
-  margin: 5%;
+  margin: 2%;
   padding: 10px;
   border: 2px solid;
-  background-color: #3D9970;
+  background-color: #CEDFD9;
   display: flex;
   flex-flow: column;
   width:40%;
@@ -308,11 +298,27 @@ h1{
   font-size: 20px;
 }
 .all-reviews *{
-  margin: 5% auto;
+  margin: 1% auto;
 
 }
 .user-reviews *{
-  margin: 5% auto;
+  margin: 1% auto;
   font-size: 20px;
 }
->>>>>>> ccd0ddf45dc234405ac7d1cd38b031ad8cb36626
+
+.feed-item{
+  border-radius: 20px;
+
+  margin: 5%;
+  padding: 10px;
+  border: 2px solid;
+  background-color: #CEDFD9;
+}
+
+.icon{
+  padding-right :10px;
+}
+
+a{
+  text-decoration: none;
+}

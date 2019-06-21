@@ -1,15 +1,15 @@
 // This page should have a form to create user
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
+import {Link, Redirect} from 'react-router-dom';
 
-class CreateUser extends Component {
-    constructor() {
-        super();
+class Signup extends Component {
+    constructor(props) {
+        super(props);
 
         this.state = {
             name: "",
-            email: ""
+            email: "",
+            password: ""
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -26,20 +26,24 @@ class CreateUser extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await axios.post('http://localhost:4567/user/create', {
-            name: this.state.name,
-            email: this.state.email
-        })
+        const {name, email, password} = this.state;
+        try {
+            await this.props.handleSignup({name, email, password});
+        } catch (err) {
+            throw err
+        }
     }
 
     render() {
+        if (this.props.isSignedIn) {
+            return <Redirect to="/"/>
+        }
         return (
-            <div>
+            <div className='inside-app'>
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/create/review">Add Review</Link>
                 </nav>
-                <h1>Add User Form</h1>
+                <h1>Signup Form</h1>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <div>
                         <label>Name</label>
@@ -47,7 +51,11 @@ class CreateUser extends Component {
                     </div>
                     <div>
                         <label>Email</label>
-                        <input name="email" type="email" onChange={this.handleChange} value={this.state.email}/>
+                        <input name="email" type="email" onChange={this.handleChange} value={this.state.email} required/>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input name="password" type="password" onChange={this.handleChange} value={this.state.password} required/>
                     </div>
                     <div>
                         <input type="submit"/>
@@ -58,4 +66,4 @@ class CreateUser extends Component {
     }
 }
 
-export default CreateUser;
+export default Signup;

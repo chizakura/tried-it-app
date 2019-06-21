@@ -43,15 +43,16 @@ class SearchBar extends Component {
         if (this.state.searchTerm ) {
             results = <div className='results'>
                 <ul>
-                    {this.state.placesList.map( place => <li><Link to={`/place/${place.id}`}>{place.name}</Link></li>)}
+                    {this.state.placesList.map( (place, key) => <li key={key}><Link to={`/place/${place.id}`}>{place.name}</Link></li>)}
                     <hr />
-                    {this.state.usersList.map( user => <li><Link to={`/user/${user.id}`}>{user.name}</Link></li>)}
+                    {this.state.usersList.map( (user, key) => <li key={key}><Link to={`/user/${user.id}`}>{user.name}</Link></li>)}
                 </ul>
             </div>
         }
         return (
             <form onChange={this.handleSearch}>
-                <input 
+                <input
+                    id='input-field'
                     autoComplete="off"
                     name='searchTerm'
                     type='text'

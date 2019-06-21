@@ -25,27 +25,27 @@ class ShowPlace extends Component{
         })
     }
     
-        
     render(){
         return (
-            <div>
+            <div className='inside-app'>
+                <nav>
+                    <Link to="/">Home</Link>
+                </nav>
                 <h2>{this.state.place.name}</h2>
                 <h4>{this.state.place.category}</h4>
                 <p>{this.state.place.description}</p>
                 <p>{this.state.place.address}  -  <b>{this.state.place.phone}</b></p>
-              <div className="all-reviews">
+                <div className="all-reviews">
                     {this.state.usersList.map(review => {
                         return (
                             <div className="review-box" key={review.id}>
-                            <Link to={`/user/${review.user.id}`}>{review.user.name}</Link> 
-                            <b>{review.title}</b>
-                             <p>{review.entry}</p>
+                                <Link to={`/user/${review.user.id}`}>{review.user.name}</Link> 
+                                <b>{review.title}</b>
+                                <p>{review.entry}</p>
                             </div>
-                            
-                        
                         )
                     })}
-                    </div>
+                </div>
             </div>
         )
     }
