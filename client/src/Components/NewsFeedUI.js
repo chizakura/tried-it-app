@@ -14,7 +14,7 @@ class NewsFeed extends Component {
 
     async componentDidMount (){
         let reviewsArray = []
-        const res = await axios.get(`/review`)
+        const res = await axios.get(`/reviews`)
         const reviews = res.data.reviews;        
  
         let index1 = reviews.length -1;

@@ -22,7 +22,7 @@ class CreateReview extends Component {
     }
 
     async componentDidMount() {
-        const resPlace = await axios.get('/place');
+        const resPlace = await axios.get('/places');
         this.setState({
             placeList: resPlace.data.places
         })
@@ -38,7 +38,7 @@ class CreateReview extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await axios.post('/review/create', {
+        await axios.post('/reviews/create', {
             title: this.state.title,
             date: this.state.date,
             rating: this.state.rating,

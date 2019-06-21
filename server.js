@@ -25,9 +25,9 @@ app.use((err, req, res, next)=>{
     res.json({ message: err.message })
 })
 
-app.use('/user',userRouter)
-app.use('/review',reviewRouter)
-app.use('/place',placeRouter)
+app.use('/users',userRouter)
+app.use('/reviews',reviewRouter)
+app.use('/places',placeRouter)
 app.use('/auth', authRouter)
 app.use('/app', authorized, appRouter)
 app.use(passport.initialize());

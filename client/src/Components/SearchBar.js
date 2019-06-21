@@ -17,8 +17,8 @@ class SearchBar extends Component {
         if (event.target.value) {
             let name = event.target.name;
             let value = event.target.value;
-            const places = await axios.get(`/place/findByName/${value}`)
-            const users = await axios.get(`/user/findByName/${value}`);
+            const places = await axios.get(`/places/findByName/${value}`)
+            const users = await axios.get(`/users/findByName/${value}`);
      
             this.setState({
                 [name]: value,
