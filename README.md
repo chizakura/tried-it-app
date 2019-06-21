@@ -152,6 +152,7 @@ Shaban- I am proud of this code because this sets all the forms to look clean. I
 | --- | :---: |  
 | Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything  the way the team anticipated | 
 | Adding friends | Ultimately we decided to stick with just authroization Adding friends would require more time and it would get to complicated | 
+| Adding Favorites to places | This was post mvp and did not get the time to touch this | 
 
 ## Issues and Resolutions
 When editing the review the date was showing up with the exact time the review was created with the minutes and seconds. We used  entryDate.toLocaleString to format the date to get it in mm-dd-yyyy format.
