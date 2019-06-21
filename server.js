@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 // Static hosting for built files
-// app.use(express.static(path.join(__dirname, './client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 app.use((err, req, res, next)=>{
     res.status(err.status || 500)
