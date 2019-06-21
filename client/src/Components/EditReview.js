@@ -25,7 +25,7 @@ class EditReview extends Component {
     }
 
     async componentDidMount() {
-        const res = await axios.get(`http://localhost:4567/review/${this.props.match.params.id}`);
+        const res = await axios.get(`/review/${this.props.match.params.id}`);
         const reviews = res.data.review;
         const entryDate = new Date(reviews.date)
 
@@ -60,7 +60,7 @@ class EditReview extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-        await axios.put(`http://localhost:4567/review/${this.props.match.params.id}`, {
+        await axios.put(`/review/${this.props.match.params.id}`, {
             title: this.state.title,
             date: this.state.date,
             rating: this.state.rating,

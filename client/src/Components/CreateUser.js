@@ -26,7 +26,7 @@ class CreateUser extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await axios.post('http://localhost:4567/user/create', {
+        await axios.post('/user/create', {
             name: this.state.name,
             email: this.state.email
         })

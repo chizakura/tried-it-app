@@ -24,8 +24,8 @@ class CreateReview extends Component {
     }
 
     async componentDidMount() {
-        const resPlace = await axios.get('http://localhost:4567/place');
-        const resUser = await axios.get('http://localhost:4567/user');
+        const resPlace = await axios.get('/place');
+        const resUser = await axios.get('/user');
         this.setState({
             userList: resUser.data.users,
             placeList: resPlace.data.places
@@ -42,7 +42,7 @@ class CreateReview extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await axios.post('http://localhost:4567/review/create', {
+        await axios.post('/review/create', {
             title: this.state.title,
             date: this.state.date,
             rating: this.state.rating,
