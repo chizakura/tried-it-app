@@ -147,7 +147,7 @@ Linda-
  Shaban- I am proud of this code because this sets all the forms to look clean. It shows my progress and I am getting better at the making a website look more appealing. Also the second one is for the buttons that take the user to create and edit reviews. I got the format from https://freefrontend.com/css-buttons/.
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
-| Original Plan | Outcome |
+| Original plan | Outcome |
 | --- | :---: |  
 | Adding Likes and Comments | Did not add because it would get to complicated and there was not enough time to have everything  the way the team anticipated |  
 | Adding friends | Ultimately we decided to stick with just authroization Adding friends would require more time and it would get to complicated |  
