@@ -98,13 +98,8 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
-#### SAMPLE.....
-| Function | Description | 
-| --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string of text | 
-
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+ Use this section to list all supporting libraries and thier role in the project.
  
 | Library | What it Does |
 | --- | --- |
@@ -114,26 +109,70 @@ Helper functions should be generic enough that they can be reused in other appli
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.
+Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
-#### SAMPLE.....
+**include: [Place]**: Passing a Place object that is associated with a Review object when getting the route `/findUserPlaces/:id` and being able to access all info associated with that Place object.
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
+    const reviews = await Review.findAll({
+        where: {
+            userId : req.params.id
+        },
+        include: [Place]
+    })
+	...
+})
+```
+
+**.toLocaleString**: Formatting the date from the database in a pretty and readable format.
+```
+const entryDate = new Date(this.state.review.date);
+entryDate.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"})
 ```
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.
 
-#### SAMPLE.....
-| Original Plan | Outcome | 
-| --- | --- |  
-| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
-
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier
-**RESOLUTION**: Missing comma after first object in sources {} object
+#### #1
+**ISSUE**: Not being able to access all info from Place table from User table.
+#### `server.js`
+```
+reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
+    const reviews = await Review.findAll({
+        where: {
+            userId : req.params.id
+        },
+        include: [Place]
+    })
+	...
+})
+```
+#### `ShowReview.js`
+```
+const res = await axios.get(`/reviews/${this.props.match.params.id}`);
+        
+this.setState({
+    review: res.data.review,
+    user: res.data.review.user,
+    place: res.data.review.place,
+})
+```
+**RESOLUTION**: Used include in route to pass Place object when accessing info from Reviews table.
+
+#### #2
+**ERROR**: Get `http://localhost/review/findUserPlaces/:id` 404 (not found)
+```
+reviewRouter.get('/findUserPlaces/:id', async (req, res) => {
+    const reviews = await Review.findAll({
+        where: {
+            user_id : req.params.id
+        },
+        include: [Place]
+    })
+	...
+})
+```
+**RESOLUTION**: Found out (through Rachel's help) that route /review/findUserPlaces was looking for user_id but in the database it was userId.

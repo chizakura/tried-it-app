@@ -1,22 +1,19 @@
-// this page displays list of places of a specific user
+// This page displays list of places of a specific user
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 class ShowUser extends Component{
     constructor(props){
-        super(props)
+        super(props);
+        
         this.state = {
             user: {},
             reviewsList: []
         }
     }
 
-    // This componentDidMount calls user api to show one specific user, it also calls the review table with user_id and gets
-    // PlacesIdResponse and saves it in placesId variable, which is to be used in the 3rd axios call to places table to 
-    // get place information.
-    
-    async componentDidMount(){
+    async componentDidMount() {
         const response = await axios.get(`/users/${this.props.match.params.id}`);
         const user = response.data.user;
         const placesIdResponse = await axios.get(`/reviews/findUserPlaces/${this.props.match.params.id}`);
@@ -53,4 +50,5 @@ class ShowUser extends Component{
         )
     }
 }
+
 export default ShowUser;

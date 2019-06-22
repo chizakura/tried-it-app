@@ -1,26 +1,28 @@
-import React, { Component } from 'react'
-import { Feed } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Feed } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class NewsFeed extends Component {
     constructor(props){
-        super(props)
+        super(props);
+
         this.state ={
             reviewsArray: []
         }
-        this.setIcon = this.setIcon.bind(this)
+
+        this.setIcon = this.setIcon.bind(this);
     }
 
-    async componentDidMount (){
-        let reviewsArray = []
-        const res = await axios.get(`/reviews`)
+    async componentDidMount() {
+        let reviewsArray = [];
+        const res = await axios.get(`/reviews`);
         const reviews = res.data.reviews;        
  
         let index1 = reviews.length -1;
         let index2 = reviews.length -2;
         let index3 = reviews.length -3;
-        reviewsArray.push(reviews[index1], reviews[index2], reviews[index3])
+        reviewsArray.push(reviews[index1], reviews[index2], reviews[index3]);
         
         this.setState({
             reviewsArray
@@ -28,7 +30,7 @@ class NewsFeed extends Component {
     }
 
     setIcon(category){
-        let icon 
+        let icon;
         switch (category) {
             case 'food':
                 icon = "fastfood"
@@ -51,7 +53,7 @@ class NewsFeed extends Component {
     }
 
     render(){
-        const { reviewsArray } = this.state
+        const { reviewsArray } = this.state;
         return (
         <Feed>
             {reviewsArray.map( (review, key) =>
@@ -76,12 +78,4 @@ class NewsFeed extends Component {
     }
 }
 
-export default NewsFeed
-
-
-
-
-
-
-
-    
+export default NewsFeed;

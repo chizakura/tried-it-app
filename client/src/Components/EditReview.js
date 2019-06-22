@@ -82,8 +82,6 @@ class EditReview extends Component {
     }
 
     render() {
-        // console.log(this.props.user.id)
-        // console.log(this.state.reviews.userId)
         if (this.state.redirectOnUpdate) {
             return <Redirect to={`/review/${this.props.match.params.id}`}/>
         } else if(this.state.redirectOnDelete) {
@@ -92,7 +90,6 @@ class EditReview extends Component {
         return (
             <div className='inside-app'>
                 {this.state.redirect ? <Redirect to={`/review/${this.props.match.params.id}`} /> : null}
-                {/* {(this.props.user.id !== this.state.reviews.userId) ? <Redirect to={`/review/${this.props.match.params.id}`}/> : null} */}
                 <nav>
                     <Link to="/">Home</Link>
                     <Link to={`/review/${this.props.match.params.id}`}>Back</Link>

@@ -1,3 +1,5 @@
+// Most code on this page is based on Kareem Grant's repo here:
+// https://git.generalassemb.ly/sei-nyc-thunderbolt/express-auth-lesson
 const express = require('express');
 const authRouter = express.Router();
 const {passport, jwtSign} = require('../auth/handleAuth');

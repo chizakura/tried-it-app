@@ -6,7 +6,8 @@ import axios from 'axios';
 
 class ShowPlace extends Component{
     constructor(props){
-        super(props)
+        super(props);
+
         this.state = {
             place: {},
             usersList: []
@@ -50,4 +51,5 @@ class ShowPlace extends Component{
         )
     }
 }
+
 export default ShowPlace;

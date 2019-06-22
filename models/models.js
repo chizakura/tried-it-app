@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize")
+const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
 const buf = Buffer.from(`SALT_KEY=${process.env.BCRYPT_SALT_ROUNDS_NUM}`);
@@ -79,11 +79,10 @@ const Place = db.define('place', {
     }
 })
 
-User.hasMany(Review)
-Place.hasMany(Review)
-Review.belongsTo(Place)
-Review.belongsTo(User)
-
+User.hasMany(Review);
+Place.hasMany(Review);
+Review.belongsTo(Place);
+Review.belongsTo(User);
 
 module.exports = {
     db,

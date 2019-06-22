@@ -1,4 +1,4 @@
-// Most code on this page based on Kareem Grant's repo here:
+// Most code on this page is based on Kareem Grant's repo here:
 // https://git.generalassemb.ly/sei-nyc-thunderbolt/express-auth-lesson
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;

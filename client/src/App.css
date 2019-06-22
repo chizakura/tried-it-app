@@ -7,18 +7,19 @@ body, html, #root {
   height: 100%
 }
 
-.App p{
+.App p {
   font-size: 20px;
 }
 
-.place-review{
+.place-review {
   display: flex
 }
 
-body{
+body {
   background-color: white;
 }
-p{
+
+p {
   font-size: 20px;
 }
 
@@ -59,12 +60,12 @@ nav {
   background-repeat: no-repeat;
 }
 
-.input-field{
+.input-field {
   size: 3rem;
 }
 
 /* CreateReview and CreateUser */
-input[type=submit]{
+input[type=submit] {
   color: white;
   border:2px solid;
   border-color:black;
@@ -73,6 +74,7 @@ input[type=submit]{
   cursor: pointer;
   width:100px
 }
+
 /* Used for design on forms https://freefrontend.com/css-forms/ */
 .form {
   display: inline-flex;
@@ -118,10 +120,11 @@ font-size:14px;
 box-shadow:0 0 10px;
 }
 
-.date input{
+.date input {
   font-size: 14px;
 }
-.before-home{
+
+.before-home {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -150,7 +153,8 @@ box-shadow:0 0 10px;
   grid-template-columns: auto auto auto;
   grid-column-gap: 200px;
 }
-.ui.feed *{
+
+.ui.feed * {
   margin: 5% auto;
 }
 
@@ -164,7 +168,6 @@ box-shadow:0 0 10px;
  justify-content: space-evenly;
  margin-top: -60px
 }
-  
 
 .top {
   display: flex;
@@ -186,12 +189,11 @@ box-shadow:0 0 10px;
   justify-content: space-around;
 }
 
-
 select {
   width: 160px;
 }
 
-.results{
+.results {
   z-index: 2;
 }
 
@@ -199,7 +201,8 @@ select {
 	-webkit-animation: results 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: results 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-li{
+
+li {
   list-style-type: none;
 }
 /* ----------------------------------------------
@@ -228,6 +231,7 @@ li{
     opacity: 1;
   }
 }
+
 @keyframes results {
   0% {
     -webkit-transform: scaleY(0);
@@ -243,40 +247,37 @@ li{
             transform-origin: 100% 0%;
     opacity: 1;
   }
-
- /* margin-left: 320px;
-  font-size: 30px;
-  color: black */
 }
 
 .title a {
   font-size: 50px;
   color: white
 }
+
 .post p { 
   color: black;
   font-size: 30px;
 }
 
-h1{
+h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: rgb(64, 151, 119);
 }
 
 /* User Review Page */
-
-.outer-review{
+.outer-review {
   height: 100%;
   background-image: url('./skyline.jpg');
   background-size: 100%;
   background-repeat: repeat;
-  /* background-position-y: 30%; */
 }
-.review{
+
+.review {
   background-color: #CEDFD9;
- font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;  
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;  
 }
-.review{
+
+.review {
   font-size: 35px;
   margin-top: 50px;
   height:500px;
@@ -285,16 +286,18 @@ h1{
   border-radius: 20px;
   padding:7px;
 }
-.review a{
+
+.review a {
   color: white; 
   font-size: 32px;
 }
+
 .review p {
   font-size: 30px;
   line-height: 40px;
 }
 
-.review-box{
+.review-box {
   margin: 2%;
   padding: 10px;
   border: 2px solid;
@@ -304,34 +307,36 @@ h1{
   width:40%;
 
 }
+
 .review-box a {
   margin-bottom: 1%;
 }
-.review-box p{
-  font-size: 20px;
-}
-.all-reviews *{
-  margin: 1% auto;
 
-}
-.user-reviews *{
-  margin: 1% auto;
+.review-box p {
   font-size: 20px;
 }
 
-.feed-item{
+.all-reviews * {
+  margin: 1% auto;
+}
+
+.user-reviews * {
+  margin: 1% auto;
+  font-size: 20px;
+}
+
+.feed-item {
   border-radius: 20px;
-
   margin: 5%;
   padding: 10px;
   border: 2px solid;
   background-color: #CEDFD9;
 }
 
-.icon{
+.icon {
   padding-right :10px;
 }
 
-a{
+a {
   text-decoration: none;
 }

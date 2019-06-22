@@ -5,11 +5,13 @@ import axios from 'axios';
 class SearchBar extends Component {
     constructor(){
         super();
+
         this.state = {
             searchTerm: "",
             placesList: [],
             usersList: []
         }
+
         this.handleSearch = this.handleSearch.bind(this);
     }
 
@@ -17,7 +19,7 @@ class SearchBar extends Component {
         if (event.target.value) {
             let name = event.target.name;
             let value = event.target.value;
-            const places = await axios.get(`/places/findByName/${value}`)
+            const places = await axios.get(`/places/findByName/${value}`);
             const users = await axios.get(`/users/findByName/${value}`);
      
             this.setState({
@@ -25,7 +27,7 @@ class SearchBar extends Component {
                 placesList: places.data.place,
                 usersList: users.data.user
             })
-        }else{
+        } else {
             let name = event.target.name;
             let value = event.target.value;
 
@@ -35,11 +37,10 @@ class SearchBar extends Component {
                 usersList: []
             })
         }
- 
     }
 
     render() {
-        let results
+        let results;
         if (this.state.searchTerm ) {
             results = <div className='results'>
                 <ul>

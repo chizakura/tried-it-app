@@ -1,3 +1,5 @@
+// Some code on this page is based on Kareem Grant's repo here:
+// https://git.generalassemb.ly/sei-nyc-thunderbolt/express-auth-lesson
 import React, {Component} from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
@@ -36,7 +38,7 @@ class App extends Component {
         user: fetchedUser
       })
     } catch (e) {
-      console.log("Issue fetching token")
+      console.log("Issue fetching token");
     }
   }
 

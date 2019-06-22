@@ -10,7 +10,6 @@ import NewsFeed from './NewsFeedUI';
 class LandingPage extends Component {
     render() {
         const name = (this.props.user.name !== undefined) ? this.props.user.name : "";
-        console.log(`Welcome back ${name}`);
         return (
             <div className="inside-app">
                 <div className="before-home">

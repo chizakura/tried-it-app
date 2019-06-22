@@ -1,6 +1,6 @@
-const express = require('express')
-const userRouter = express.Router()
-const { User } = require('../models/models')
+const express = require('express');
+const userRouter = express.Router();
+const { User } = require('../models/models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -10,6 +10,7 @@ userRouter.get('/', async (req, res) => {
         users: users
     })
 })
+
 userRouter.get('/:id', async (req, res) => {
         const user = await User.findByPk(req.params.id)
         res.json({

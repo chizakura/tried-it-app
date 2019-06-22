@@ -1,3 +1,5 @@
+// Most code on this page is based on Kareem Grant's repo here:
+// https://git.generalassemb.ly/sei-nyc-thunderbolt/express-auth-lesson
 import React from 'react';
 import authService from '../services/authService';
 import {Route, Redirect} from 'react-router-dom';

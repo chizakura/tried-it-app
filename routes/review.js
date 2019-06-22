@@ -1,7 +1,6 @@
-const express = require('express')
-const reviewRouter = express.Router()
-const { Review, Place, User } = require('../models/models')
-
+const express = require('express');
+const reviewRouter = express.Router();
+const { Review, Place, User } = require('../models/models');
 
 reviewRouter.get('/', async (req, res) => {
     const reviews = await Review.findAll({
@@ -55,6 +54,7 @@ reviewRouter.post('/create', async (req, res) => {
         newReview: newReview
     })
 })
+
 reviewRouter.put('/:id', async (req, res) => {
     const updateReview = {
         title: req.body.title,

@@ -15,12 +15,12 @@ class NewsFeed extends Component {
     }
 
     async componentDidMount (){
-        const res = await axios.get(`/reviews`)
+        const res = await axios.get(`/reviews`);
         const reviews = res.data.reviews;
         let index = Math.floor(Math.random()*(reviews.length));
         const review = reviews[index];
-        const place = review.place
-        const user = review.user
+        const place = review.place;
+        const user = review.user;
         
         this.setState({
             review,
@@ -50,4 +50,4 @@ class NewsFeed extends Component {
     }
  }
 
-export default NewsFeed
+export default NewsFeed;
