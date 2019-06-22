@@ -6,17 +6,17 @@
 |---|---| ---|
 |6/17| Project Description | Complete
 |6/17| Wireframes / Priority Matrix / Functional Components | Complete
-|6/18| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|6/18| Pseudocode / actual code | Incomplete
-|6/18| Initial Clickable Model | Incomplete
-|6/19| MVP | Incomplete
-|6/21| Present | Incomplete
+|6/18| Core Application Structure (HTML, CSS, etc.) | Complete
+|6/18| Pseudocode / actual code | Complete
+|6/18| Initial Clickable Model | Complete
+|6/19| MVP | Complete
+|6/21| Present | Complete
 
 ## Project Description
 
 **Tried It** is an application that allows the user to see reviews for places based on where their friends have visited. Often times individuals trust their friends' opinions more than anyone else's. This application will allow the user to add an account to the database as well as add reviews to different places. Additionally, the user may search for other friends in the database to see what places they tried and their review of it. Also, the user may search for a specific place and see which friends have "tried it" and see their reviews.
 
-- [Tried It](Link to app here)
+- [Tried It](https://tried-it-project-3.herokuapp.com/)
 
 ## Wireframes
 
@@ -53,13 +53,13 @@ Functioning application that allows the user to:
 
 Define the the React components and the architectural design of your app.
 
-#### [Tried It Architectural Design](https://res.cloudinary.com/chizakura/image/upload/v1560719179/Project%203/Tried_It_React_Architectural_Design.jpg)
+#### [Tried It Architectural Design](https://res.cloudinary.com/chizakura/image/upload/v1561151426/Project%203/Tried_It_React_Architectural_Design.jpg)
 
 ## ERD
 
 Create the ERD model for your project
 
-#### [Tried It ERD](https://res.cloudinary.com/chizakura/image/upload/v1560719244/Project%203/Tried_It_ERD.png)
+#### [Tried It ERD](https://res.cloudinary.com/chizakura/image/upload/v1561151215/Project%203/Tried_It_ERD.png)
 
 ## Functional Components
 
@@ -70,26 +70,30 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | LandingPage | This will be the main page which includes the search bar and news feed |
 | SearchBar | This will render the search bar that shows a list of places and users |
 | NewsFeed | This will render a list of reviews with data taken from an API |
+| NewsFeedUI | The icons for the NewsFeed component |
 | ShowPlace | This will render a list of users based on the place that was selected in the search |
 | ShowUser | This will render a list of places based on the user that was selected in the search |
 | ShowReview | This will render a specific user's review of a place they have been |
+| Login | The will render the login form |
 | Signup | This will render a form to create a new user |
 | CreateReview | This will render a form to create a new review |
+| EditReview | This will render a form to change info on a ShowReview component |
+| ProtectedRoute | This will make components only available to authenticated users |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Landing Page showing News feed | H | 5hrs|  |
-| Setting up a user to register an account | H | 3hrs|  |
-| Adding Reviews | H | 2hrs|  |
-| Adding Places | H | 2hrs|  |
-| Being able to search the database | H | 2hrs|  |
-| Styling | M | 4hrs|  |
-| Adding a friend| L | 4hrs|  |
-| Authorization | L | 6hrs|  |
-| Total |  | 28 hrs| hrs |
+| Landing Page showing News feed | H | 5hrs | 6hrs |
+| Setting up a user to register an account | H | 3hrs | 3hrs |
+| Adding Reviews | H | 2hrs | 2hrs |
+| Adding Places | H | 2hrs | 4hrs |
+| Being able to search the database | H | 4hrs | 3hrs |
+| Styling | M | 6hrs | 6hrs |
+| Authorization | L | 6hrs | 6hrs |
+| Adding a friend| L | 4hrs | - |
+| Total |  | 26hrs| 30hrs |
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
@@ -102,11 +106,11 @@ Helper functions should be generic enough that they can be reused in other appli
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
  
- #### SAMPLE.....
-| Library | What it Does | 
-| --- | :---: |  
-| Bootstrap | Used to help style my application | 
-| Giphy API | Used to get gifs to use | 
+| Library | What it Does |
+| --- | --- |
+| Semantic UI | Used to help style our application |
+| Dotenv | Used to load environment variables into process.env |
+| Bcrypt | Used to encrypted passwords for registered users |
 
 ## Code Snippet
 
@@ -131,5 +135,5 @@ function reverse(string) {
  Use this section to list of all major issues encountered and their resolution.
 
 #### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier
 **RESOLUTION**: Missing comma after first object in sources {} object
